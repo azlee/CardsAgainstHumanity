@@ -1,0 +1,303 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 { 
+    color: #111;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-align: center;
+}
+
+.card {
+    border-radius: 1rem;
+    width: 7rem;
+    height: 10.5rem;
+    padding: .7rem;
+    margin: 0.3rem;
+    font-family: "Helvetica Neue", Helvetica, Arial,sans-serif;
+    font-weight: bolder;
+    font-size:.85rem;
+    font-variant: normal;
+    word-wrap: break-word;
+}
+
+.question {
+    color: white;
+    background-color: black;
+}
+
+.answer {
+    color: black;
+    background-color: white;
+    border: .1rem solid #999999;
+}
+
+.nonactive-answer {
+    color: black;
+    background-color: white;
+    border: .1rem solid #999999;
+}
+
+.answer-winner {
+    color: black;
+    background-color: white;
+    border: .1rem solid #999999;
+}
+
+.back {
+    font-size: 1.2rem;
+    border: .1rem solid #999999;
+}
+
+.placeholder {
+    background-color: #e6e6e6;
+    border: .1rem dashed #999999;
+}
+
+.answer:hover {
+    background-color: #E5F4F4;
+}
+
+.card-empty {
+    background-color: gray;
+    border-radius: 1rem;
+    width: 10rem;
+    height: 15rem;
+    color: rgb(224, 214, 214);
+    padding: 0.25rem;
+    margin: 0.25rem;
+}
+
+.winning-card {
+    box-shadow: 0 0 1rem #70db70;
+}
+
+.winner-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #a6a6a6;
+}
+
+#active-question {
+    width: 8rem;
+    height: 12rem;
+    font-size: .9rem; 
+}
+
+#active-player-cards {
+    justify-content: center;
+}
+
+#answer-draw-pile {
+    box-shadow: 1.5px 1.5px rgba(136, 136, 136, 0.5);
+}
+
+#question-draw-pile {
+    margin-left: 7rem;
+    box-shadow: 1.5px 1.5px rgba(136, 136, 136, 0.5);
+}
+
+#question-draw-pile:hover {
+    background-color: #333333;
+    color: #f2f2f2;
+}
+
+#notification {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#judge-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-left: .3rem;
+}
+
+#score-and-round-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#score-board {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: flex-end;
+    align-content: flex-start;
+    margin-right: .5rem;
+    font-size: .75rem;
+}
+
+#round-number {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+
+#score-board table {
+    border-collapse: collapse;
+}
+
+#score-board th {
+    height: .5rem;
+    width: 4rem;
+    background-color: #bbdddd;
+}
+
+#score-board td {
+    text-align: center;
+}
+
+#score-board th, td {
+    border: 1px solid black;
+    padding: .2rem .2rem;
+}
+
+.card-holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-content: flex-start;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.card-combo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-content: flex-start;
+    margin: 1.5rem 1.5rem;
+}
+
+#game-table {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+}
+
+.player-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.player-preview .card {
+    width: 3rem;
+    height: 4.5rem;
+    font-size: .6rem; 
+    margin: 1rem 1rem;
+    border: .05rem solid #cccccc !important;
+    color: #1a1a1a;
+}
+
+.player-preview .card:hover {
+    background-color:#E5F4F4;
+}
+
+#currentPlayer {
+    margin-top: 1.3rem;
+    margin-left: 1.3rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  padding-top: 10rem;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal .card {
+    text-align:left;
+    width: 7rem;
+    height: 10.5rem;
+    font-size: .8rem; 
+}
+
+/* Modal Content */
+.modal-content {
+  text-align: center;
+  background-color: #fefefe;
+  margin: auto;
+  font-weight: bold;
+  border: 1px solid #888;
+  border-radius: 1rem; 
+  width: 66%;
+}
+
+.modal-content #card {
+    text-align: left !important;
+}
+
+.modal-content form {
+    font-size: 1.5rem;
+}
+
+.modal-content label {
+    margin: 1rem 1rem;
+    font-size: 1.25rem;
+}
+
+.modal-content input {
+    font-size: 1.25rem;
+    margin: .75rem .75rem;
+}
+
+.modal-content button {
+    font-weight: bold;
+    letter-spacing: .05rem;
+    background-color: #bbdddd;
+    border-radius: .4rem;
+    margin: .75rem .75rem 1.2rem;
+    padding: 1rem 1.3rem;
+    font-size: .8rem;
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    -ms-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+}
+
+.modal-content button:hover {
+    background-color: #99cccc;
+}
+
+/* The Close Button */
+.close {
+  margin-right: .4rem;
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <title>Cards Against Humanity</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <link rel="stylesheet" href="style/Cards.css"/>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    </head>
+    <body>
+        <h1> Cards Against Humanity </h1>
+
+        <!-- Modal for displaying winner of each round
+            OR for displaying the card combos that a player has won so far 
+            OR for displaying the game lobby join modal
+        -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content" id="modal-content">
+            </div>
+        </div>
+
+        <!-- Score board -->
+        <div id="score-and-round-header">
+            <div id="round-number"></div>
+            <div id="score-board">
+                <table id="score-board-table">
+                    <tr id="scores"></tr>
+                </table>
+            </div>
+        </div>
+
+        <div id='game-table'>
+            <!-- some players not including the current player -->
+            <div class='player-preview' id='player-preview-left'>
+            </div>
+
+            <!-- Active question & draw pile for questions & answers -->
+            <div id="main-inner-board">
+                <div class='card-holder'>
+                    <span style="display:flex;flex-direction:column">
+                    <div id='judge-name'></div>
+                    <div class='card question' id='active-question'>Well, what are you waiting for? </div>
+                    </span>
+                    <!-- <div class='card' id='winner-placeholder'></div> -->
+                    <div class='card question back' id="question-draw-pile">Cards Against Humanity</div>
+                    <div class='card answer back' id="answer-draw-pile">Cards Against Humanity</div>
+                </div>
+            
+                <!-- Notification for displaying if card czar is choosing answer -->
+                <p id="notification"></p>
+
+                <!-- Answers for question -->
+                <div class='card-holder' id='final-answers'>
+                </div>
+            </div>
+
+            <div class='player-preview' id='player-preview-right'>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Active player's cards -->
+        <div id="currentPlayer"></div>
+        <div class='card-holder' id='active-player-cards'>
+        </div>
+    </body>
+</html>
