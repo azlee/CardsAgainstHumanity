@@ -156,6 +156,7 @@ const NotificationType = {
     // card czar notifications
     CHOOSE_FAVORITE_ANSWER: "Choose your favorite answer:",
     WAITING_FOR_OTHER_PLAYERS_TO_JOIN: "Waiting for more players to join..",
+    YOURE_CARD_CZAR: "You're the card czar. Wait for players to play &amp; draw card...",
 
     // card czar and non czar notifications
     WAITING_FOR_PLAYERS: "Waiting for all players to play &amp; draw a card...",
@@ -471,7 +472,7 @@ function renderNotification() {
         if (GameState.players.size === 1) {
             notification = NotificationType.WAITING_FOR_OTHER_PLAYERS_TO_JOIN;
         } else if (!allAnswersSubmitted && GameState.players.size > 1) {
-            notification = NotificationType.WAITING_FOR_PLAYERS;
+            notification = NotificationType.YOURE_CARD_CZAR;
         } else if (allAnswersSubmitted && !winnerChosen) {
             notification = NotificationType.CHOOSE_FAVORITE_ANSWER;
         } else if (allAnswersSubmitted && winnerChosen) {
