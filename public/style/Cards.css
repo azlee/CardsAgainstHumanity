@@ -57,6 +57,7 @@ h1 {
 }
 
 .placeholder {
+    color: #999999;
     background-color: #e6e6e6;
     border: .1rem dashed #999999;
 }

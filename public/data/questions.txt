@@ -1,16 +1,20 @@
-Coming to Broadway this season, %s: The Musical.
+Can you get me a %s from Starbucks&reg;?
+Coming to Red Lobster&reg; this month, %s.Here is the church<br>Here is the steeple<br>Open the doors<br>And there is %s.
+Dear Abby,<br>I'm having some trouble with %s and would like your advice.
+<small>This is the way the world ends<br> This is the way the world ends<br> Not with a bang but with %s.</small>
+&#9733;&#9734;&#9734;&#9734;&#9734;<br> Do NOT go here! Found %s in my Kung Pao chicken!
+&#9733;&#9733;&#9733;&#9733;&#9733;<br> Go here! Found %s in my Chinese food!
+Coming to Broadway this season, %s: <i>The Musical</i>.
 %s. That's how I want to die.
 TSA guidelines now probihit %s on airplanes.
 Maybe she's born with it. Maybe it's %s.
 What's a girl's best friend?
 I'm sorry Professor, but I couldn't complete my homework because of %s.
-I drink to forget %s.
-Today On Maury: "Help! My son is %s!"
+Today On <i>Maury</i>: "Help! My son is %s!"
 It's a pity that kids these days are all getting involved with %s.
 What's that smell?
 The class field trip was completely ruined by %s.
 Next on ESPN2, the World Series of %s.
-What don't you want to find in your Chinese food?
 What will I bring back in time to convince people that I am a powerful wizard?
 How am I maintaining my relationship status?
 %s. It's a trap!
@@ -27,7 +31,6 @@ Justin Bieber "reeked of %s" when he was pulled over.
 The president is meeting with %s at the White House.
 %s, the best job ever!
 %s is the most dangerous thing you can let your children enjoy.
-I drink to forget %s.
 What am I running from?
 Best thing about being a man is %s.
 %s can help any marraige.
@@ -40,11 +43,9 @@ Sorry everyone, I just %s.
 White people like %s.
 Life was difficult for cavemen before %s.
 Who stole the cookies from the cookie jar?
-What's a girl's best friend?
 What are my parents hiding from me?
 I drink to forget %s.
 What's that sound?
-During sex, I like to think about %s.
 Alternative medicine is now embracing the curative powers of %s.
 Due to a PR fiasco, Wal*Mart no longer offers %s.
 Why am I sticky?
@@ -55,7 +56,6 @@ During Picasso's often-overlooked Brown period, he produced hundreds of painting
 %s - betcha can't have just one!
 What don't you want to find in your Chinese food?
 Instead of coal, Santa now gives the bad children %s.
-How am I maintaining my relationship status?
 What's my secret power?
 I wish I hadn't lost the instruction manual for %s.
 The U.S. has begun air-dropping %s to the children of Afghanistan.
@@ -64,24 +64,23 @@ What's there a ton of in heaven?
 What will always get you laid?
 What would grandma find disturbing, yet oddly charming?
 In the new Disney Channel Original Movie, Hannah Montana struggles with %s for the first time.
-What will I bring back in time to convince people that I am a powerful wizard?
 %s? There's an app for that.
-What gives me uncontrollable gas?
 What turns me on?
 %s: Good to the last drop.
 %s: Kid-tested, mother-approved.
-Next from J.K. Rowling: Harry Potter and the Chamber of %s.
+What did Vin Diesel eat for dinner?
+What's there a ton of in hell?
+Next from J.K. Rowling: <i>Harry Potter and the Chamber of %s</i>.
 Dear Abby, I'm having some trouble with %s and would like your advice.
 What is the gift that keeps on giving.
-Sorry everyone, I just %s.
+Sorry everyone, I just ate %s.
 What's the most emo?
 What's the new fad diet?
-What's the next Happy Meal toy?
+What's the next HappyMeal&trade; toy?
 I got 99 problems but %s ain't one.
 When I pooped, what came out of my butt?
 What am I giving up for Lent?
 Why do I hurt all over?
-%s. That's how I want to die.
 A romantic, candlelit dinner would be incomplete without %s.
 What never fails to liven up the party?
 A successful job interview begins with a firm handshake and ends with %s.
@@ -90,7 +89,6 @@ Finally! A service that delivers %s right to your door.
 The blind date was going horribly until we discovered our shared interest in %s.
 %s. Awesome in theory, kind of a mess in practice.
 During high school I never really fit in until I found the %s club.
-I'm not like the rest of you. I'm too rich and busy for %s.
 What left this stain on my couch?
 Hey baby, come back to my place and I'll show you %s.
 I love the smell of %s in the morning.
@@ -123,3 +121,211 @@ What I wouldn't give for 10 minutes alone with %s.
 Like a good neighbor %s is there.
 Loving you is easy 'cause you're %s.
 Nothing beats cuddling with %s in bed.
+What was a terrible tragedy?
+What DON'T you want to find in your closet?
+What DON'T you want to find in your fridge?
+What is passive aggressive?
+What makes you get out of bed in the morning?
+What does Donald Trump stand for?
+What are you avoiding?
+What is your goal in life?
+What are you scared of?
+Who is the first person you want to see?
+What are you enjoying most about quarantine?
+What do you regret eating?
+What are you tired of hearing about?
+What is the value of life for you?
+What would you want to be in another life?
+What scarred you?
+What sucks?
+I may not be much to look at, but I fuck like %s?
+Hey Reddit I'm %s ask me anything.
+Introducing X-treme Baseball!, It's like baseball but with %.
+Dude, <i>do not</i> go in that bathroom. There's %s in there.
+How did I lose my virginity?
+Kids, I don't need drugs to get high. I'm high on %s.
+While the United States raced the Soviet Union to the moon, the Mexican government funneled millions of pesos into research on %s.
+I'm going on a cleanse this week. Nothing but kale juice and %s.
+When Pharaoh remained unmoved, Moses called down a Plague of %s.
+Just once, I'd like to hear you say "Thanks, Mom. Thanks for %s".
+Daddy, why is mommy crying?
+50% of all marriages end in %s.
+My fellow Americans: Before this decade is out, we <i>will</i> have %s on the moon!
+This season at Steppenwolf, Samuel Beckett's classic existential play: <i>Waiting for %s</i>.
+Life for American Indians was forever changed when the White Man introduced them to %s.
+What's Teach for America using to inspire inner city students to succeed?
+What is George W. Bush thinking about right now?
+Juse saw this upsetting video! Please retweet!! #stop%s.
+Fun tip! When your man asks you to go down on him, try surprising him with %s instead.
+When I am President, I will create the Department of %s.
+What never fails to hype people up?
+If you like %s, YOU MIGHT BE REDNECK.
+Hey guys, welcome to Chili's! Would you like to start the night off right with %s?
+Bravo's new reality show features eight washed-up celebrities living with %s.
+%s. That was so metal.
+During sex, I like to think about %s.
+Uh, hey guys, I know this was my idea, but I'm having serious doubts about %s.
+I'm not doctor, but I'm pretty sure what you're suffering from is called %s.
+After four platinum albums and three Grammys, it's time to get back to my roots, to what inspired me to make music in the first place: %s.
+After eight years in the White House, how is Obama finally letting loose?
+But before I kill you, Mr. Bond, I must show you %s.
+A recent laboratory study shows that undergraduates have 50% less sex after being exposed to %s.
+When I am a billionaire, I shall erect a 50-foot statue to commemorate %s.
+Military historians remember Alexander the Great for his brilliant use of %s against the Persians.
+War!<br> What is it good for?
+What gives me uncontrollable gas?
+The new Chevy Tahoe. With the power and space to take %s everywhere you go.
+Well if you'll excuse me, gentlemen, I have a date with %s.
+AS the mom of five rambunctious boys, I'm no stranger to %s.
+%s. High five bro.
+I get by with a little help from my %s.
+I'm LeBron James, and when I'm not slamming dunks, I love %s.
+What makes life worth living?
+Arby's: We <i>Have</i> %s.
+Mr. and Mrs. Diaz, we called you in because we're concerned about Cynthia. Are you aware that your daughter is %s?
+If you can't be with the one you love, love %s.
+Brought to you by Bud Light, the Official Beer of %s.
+Click Here for %s!!!
+Check me out, yo! I call this dance move "%s".
+Old MacDonald had %s. E-I-E-I-O.
+Men's Warehouse: You're gonna like %s. I guarantee it.
+Errbody in the club %s.
+The top Google auto-complete results for "Barack Obama": <i>Barack Obama height.<br>Barack Obama net worth.<br> Barack Obama %s</i>
+Son, take it from someone who's bee around the block a few times. Nothin' puts her in the mood like %s.
+Art isn't just a painting in a stuffy museum. Art is alive.<br>Art is %s.
+You won't believe what's in my pussy. It's %s.
+What's the most problematic?
+Feeling so grateful! #amazing #mylife #%s.
+What's the gayest?
+Girls just wanna have %s.
+A man's best friend is %s.
+One more thing. Watch out for Big Mike. They say he killed a man with %s.
+Well, shit. My eyes ain't so good, but I'll eat my own boot if that ain't %s!
+If at first you don't succeed, try $s.
+What will end racism once and for all?
+I'll take the BBQ bacon burger with a fried egg and fuck it how about %s.
+Well if %s is a crime, then lock me up!
+We do not shake with our left hands in this country. That is the hand we use for %s.
+Who know who else liked %s? <br>Hitler.
+Poor Brandon living in his parents' basement. I heard he never got over %s.
+What totally destroyed my asshole?
+I don't believe in God. I believe in %s.
+Then the princess kissed the frog, and all of a sudden the frog was %s!
+I've got rhythm, I've got music, I've got %s. Who could ask for anything more?
+No, no, no, no, no, no, NO!<br> I will not let %s ruin this wedding.
+Ooo, daddy like %s.
+Best you go back where you came from, now. We don't take too kindly to %s in these parts.
+I've always wanted to go to %s.
+Summer lovin' had me a blast. %s happened so fast.
+I like big %s and I cannot lie.
+LSD + %s = really bad time.
+What are all those whales singing about?
+As Teddy Roosevelt said, the four manly virtues are honor, temperence, industry, and %s.
+I tell you, it was a non-stop orgy. When it was over, my asshole looked like %s.
+What turned me into a Republican?
+I'm sorry, sir, but your insurance plan doesn't cover injuries caused by %s.
+Run, run, as fast as you can! You can't catch me, I'm %s!
+There is no God. It's just %s and then you die.
+She's just one of the guys, you know? She likes beer, and football, and %s.
+This Friday at the Liquid Lounge, it's %s Night! Ladies drink free.
+What sucks balls?
+I've had a horrible vision, father. I saw mountains crumbling, stars falling from the sky. I saw %s.
+Oh no! Siri, how do I fix %s?
+Dance like there's nobody watching, love like you'll never be hurt, and live like you're %s.
+Mom's to-do list:<br><li>Buy groceries</li><li>Clean up %s</li><li>Soccer practice</li>
+Why am I laughing and crying and taking off my clothes?
+She's a lady in the streets, %s in the sheets.
+What's about to take this dance floor to the next level?
+CNN breaking news! Scientists discover %s.
+Most Americans would not vote for a candidate who is openly %s.
+Congratulations! You have been selected for our summer internship program. While we are unable to offer a salary, we <i>can</i> offer you %s.
+In the 1950s, psychologists prescribed %s as a cure for homosexuality.
+As reparations for slavary, all African Americans will receive %s.
+With a one-time gift of just $10, you can save this child from %s.
+Google Calendar alert: %s in 10 minutes.
+Class, pay close attention. I will now demonstrate the physics of %s.
+Coming to theaters this holiday season, "Star Wars: The Rise of %s."
+Never fear, Captain %s is here!
+I don't really  know what my mom's job is, but I think it has something to do with %s.
+What's about to take this school dance to the next level?
+Shut up, Becky! At least I'm not %s.
+Oh, no thank you, Mrs. Lee. I've had plenty of %s for now.
+Foolish child! Did you think you could escape from %s?
+Beep beep! %s coming through!
+My favorite book is "The Amazing Adventures of %s."
+We're off to see the wizard, the wonderful wizard of %s!
+Boys? No. %s? Yes!
+Guys, stop it! There's nothing funny about %s.
+Bow before me, for I am the Queen of %s!
+There's nothing better than a peanut butter and %s sandwich.
+Mom? You have to come pick me up! There's %s at this party!
+Run, run, as fast as you can. You can't catch me, I'm %s!
+They call me "Mr. %s."
+Moms love %s.
+My name is Peter Parker. I was bitten by a radioactive spider and now I'm %s.
+The easiest way to tell me and my twin apart is that I have a freckle on my cheek and she's %s.
+It's BIG. It's SCARY. It's %s!
+Attention students. This is Principal Buttheader. Please remember that we do not allow %s in the hallway. Thank you.
+Did you know that Benjamin Franklin invented %s? 
+Ladies and gentleman, I have discovered something amazing. I have discovered %s.
+Coming soon! Batman vs. %s.
+Ew. Grandpa smells like %s.
+Kids, Dad is trying something new this week. It's called "%s."
+James Bond will return in "No Time for %s."
+The warm air was filled with change. Things were different, for Emily was now %s.
+The aliens are here. They want %s.
+Hey guys. I just want to tell all my followers who are struggling with %s: it DOES get better.
+Madam President, we've run out of time. The only option is %s.
+Now in bookstores. Nancy Drew and the Mystery of %s.
+Where do babies come from?
+Alright, which one of you litte turds is responsible for %s?!
+You don't love me, Sam. All you care about is %s.
+Come on, Danny. All the cool kids are doin' it. Wanna try %s?
+Me and my friends don't play with dolls anymore. We're into %s now.
+ENOUGH! I will not let %s tear this family apart!
+I lost my arm in a %s accident.
+Police! Arrest this man! He's %s.
+Time to put on my favorite t-shirt, the one that says "I &#9825; %s."
+Before I attend your sleepover, I must inform you: toys bore me, and I don't care for sweets. I prefer %s.
+Isn't this great, honey? Just you, me, the kids, and %s.
+Hey, check out my band! We're called "Rage Against %s."
+ME HUNGRY. ME WANT %S.
+Come with me, and you'll be in a world of %s.
+Whoa there, partner! Looks like %s spooked my horse.
+It's a bird, it's a plane, it's %s!
+My favorite Buzzfeed video is: People see %s for the first time.
+%s pairs well with red wine.
+%s keeps getting bigger and bigger and bigger!
+I hope I forget %s.
+Get your hot %s! One night only!
+%s. It's the best thing since sliced bread.
+Shut up and %s me.
+I smear %s on my bagels.
+%s is what is for dinner.
+One small step for man, one giant leap for %s.
+We're off to see the Wizard, the Wonderful Wizard of %s!
+What was my old college nickname?
+What instantly calms me?
+I can't believe my gyno asked for %s.
+%s on a crowded subway train is the shit.
+Kids react to %s on YouTube.
+OMG. I have %s.
+How would you describe me?
+I wish my partner would give me %s.
+People thought I was crazy when I told them that I was going to %s.
+%s. I would never leave home without it!
+"Everything is about sex. Except sex. Sex is about %s."
+Coming soon to Netflix, "House of %s."
+Cancel all my meetings. We've got a situation with %s that requires my immediate attention.
+What do I regret doing most?
+My plan for world domination begins with %s.
+The CIA now interrogates enemy agents by subjecting them to %s.
+Welcome to Sen&‌ntilde;or Frog's! Would you like to try our signature cocktail, "%s on the Beach"?
+Legend has it Prince without perform without %s in his dressing form.
+I love being a mom. But it's tough when my kids come home filthy from %s. That's why there's Tide&reg;.
+Oh, the weather outside is frightful. But %s is so delightful.
+My Friday night is not complete without %s.
+The food is so bad it tastes like %s.
+I would gladly pay $5 for %s.
+The first thing I do in the morning when I wake up is %s.
+What was my favorite thing to do during recess?

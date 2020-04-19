@@ -155,9 +155,10 @@ const NotificationType = {
 
     // card czar notifications
     CHOOSE_FAVORITE_ANSWER: "Choose your favorite answer:",
+    WAITING_FOR_OTHER_PLAYERS_TO_JOIN: "Waiting for more players to join..",
 
     // card czar and non czar notifications
-    WAITING_FOR_PLAYERS: "Waiting for all players to play & draw a card...",
+    WAITING_FOR_PLAYERS: "Waiting for all players to play &amp; draw a card...",
     DRAW_NEW_QUESTION_CARD: "Draw new question card to start new round"
 }
 
@@ -465,7 +466,9 @@ function renderNotification() {
             notification = NotificationType.DRAW_NEW_QUESTION_CARD;
         }
     } else {
-        if (!allAnswersSubmitted && GameState.players.size > 1) {
+        if (GameState.players.size === 1) {
+            notification = NotificationType.WAITING_FOR_OTHER_PLAYERS_TO_JOIN;
+        } else if (!allAnswersSubmitted && GameState.players.size > 1) {
             notification = NotificationType.WAITING_FOR_PLAYERS;
         } else if (allAnswersSubmitted && !winnerChosen) {
             notification = NotificationType.CHOOSE_FAVORITE_ANSWER;
@@ -473,7 +476,11 @@ function renderNotification() {
             notification = NotificationType.DRAW_NEW_QUESTION_CARD;
         }
     }
-    notificationDiv.innerHTML = notification;
+    if (notificationDiv.innerHTML !== notification) {
+        $("#notification").fadeOut(250, function() {
+            $(this).html(notification).fadeIn(250);
+        });
+    }
 }
 
 /**
@@ -562,7 +569,7 @@ function renderActivePlayersCards() {
     var i = 0;
     for (var card of player.cardsInHand) {
         if (card) {
-            var answerCard = playerId === GameState.judge ? createFaceUpNonactiveAnswerCard(card) : createFaceUpAnswerCard(card);
+            var answerCard = playerId === GameState.judge ? createFaceUpPlaceholderAnswerCard(card) : createFaceUpAnswerCard(card);
             answerCard.id = 'card-' + i;
             answerCard.addEventListener("click", function(event) {
                 applyMove(MoveType.PLAY_ANSWER_CARD, event);
@@ -878,6 +885,19 @@ function createFaceDownAnswerCard() {
     var answerCard = document.createElement('div');
     answerCard.innerHTML = "Cards Against Humanity";
     answerCard.className = 'card nonactive-answer back';
+    return answerCard;
+}
+
+/**
+ * Creates a non-active answer placeholder card face up div (no hover effect)
+ * This will be displayed for the current judge so they
+ * know they don't have to play a card
+ * @returns {div} - non-active face up answer card
+ */
+function createFaceUpPlaceholderAnswerCard(answer) {
+    var answerCard = document.createElement('div');
+    answerCard.innerHTML = answer;
+    answerCard.className = 'card placeholder';
     return answerCard;
 }
 
