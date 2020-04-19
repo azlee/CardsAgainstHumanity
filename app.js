@@ -317,7 +317,6 @@ function getAnswerCard(gameRoom) {
  */
 function getQuestionCard(gameRoom) {
     var GameState = getGameState(gameRoom);
-    console.log(GameState)
     if (GameState.questions.length === 0) {
         reuseDiscardQuestions(gameRoom);
     };
@@ -433,9 +432,6 @@ function pushPlayerToGameRoom(gameRoomId, player) {
  */
 function addPlayerGameLobby(name, gameRoomId) {
     // Add player to game room lobby
-    console.log('gameRoomid is ' + gameRoomId)
-    console.log(GAME_LOBBIES)
-    console.log('GAME_LOBBIES')
     var gameRoom = GAME_LOBBIES.get(gameRoomId);
     if (!gameRoom) {
         throw INVALID_ROOM_CODE_ERROR;
@@ -469,7 +465,6 @@ function addPlayerGameLobby(name, gameRoomId) {
  * @param {str} gameRoom - game room code
  */
 function newRound(gameRoom) {
-    console.log('new round..')
     var GameState = getGameState(gameRoom);
     // new round ONLY if winner was choosen
     if (GameState.gameStatus !== GameStatus.WINNER_CHOSEN) { return; }
@@ -488,7 +483,6 @@ function newRound(gameRoom) {
     GameState.players.get(GameState.judge).role = PlayerRole.NON_JUDGE;
     var newJudge = getNewJudge(gameRoom);
     GameState.judge = newJudge;
-    console.log('judge is ' + GameState.judge);
     GameState.players.get(newJudge).role = PlayerRole.JUDGE;
     var playerIds = Array.from(GameState.players.keys());
     for (var i = 0; i < playerIds.length; i++) {
@@ -506,13 +500,11 @@ function newRound(gameRoom) {
  * @param {str} playerId 
  */
 function applyMove(gameRoom, move, answer, playerId) {
-    console.log('APPLY MOVE ' + move + ' FOR ROOM ' + gameRoom + ' for player ' + playerId)
     var GameState = getGameState(gameRoom);
     if (!GameState) {
         sendStateUpdate(gameRoom);
     }
     if (move === MoveType.PLAY_ANSWER_CARD) {
-        console.log('1')
         // player is playing an answer card
         var prevAnswer = GameState.players.get(playerId).finalCard;
         GameState.players.get(playerId).finalCard = answer;
@@ -527,13 +519,11 @@ function applyMove(gameRoom, move, answer, playerId) {
         }
         GameState.players.get(playerId).state = PlayerState.PLAYED_CARD;
     } else if (move === MoveType.UNDO_PLAY_ANSWER_CARD) {
-        console.log('2')
         addCardToHand(gameRoom, playerId, answer);
         removeCardFromCenter(gameRoom, answer);
         GameState.players.get(playerId).finalCard = null;
         GameState.players.get(playerId).state = PlayerState.NOT_PLAYED_CARD;
     } else if (move === MoveType.DRAW_NEW_ANSWER) {
-        console.log('3')
         addCardToHand(gameRoom, playerId, getAnswerCard(gameRoom));
         GameState.players.get(playerId).state = PlayerState.DREW_NEW_CARD;
     } else if (move === MoveType.CHOOSE_WINNER_CARD) {
@@ -618,20 +608,12 @@ io.on('connection', function(socket) {
         var gamePlayer = SOCKETS_MAP.get(socket.id);
         // remove the player from game
         if (gamePlayer) {
-            console.log('gameRoom b4')
-            console.log(GAME_LOBBIES.get(gamePlayer.gameRoomId))
-    
-            console.log('sockets map is now ')
-            console.log(SOCKETS_MAP)
             removePlayerFromGame(gamePlayer.gameRoomId, gamePlayer.playerId);
             SOCKETS_MAP.delete(socket.id);
-            console.log('gameRoom after')
-            console.log(GAME_LOBBIES.get(gamePlayer.gameRoomId))
             sendStateUpdate(gamePlayer.gameRoomId)
         }
     });
     socket.on('createGame', function(msg) {
-        console.log('player ' + msg.name + ' trying to create game');
         try {
             var gameRoomId = initNewGame(msg.name, socket.id);
             // send notification of game room code to player
@@ -651,7 +633,7 @@ io.on('connection', function(socket) {
             io.to(socket.id).emit(msg.room, { joinGameSuccess: true, playerId: playerId });
             sendStateUpdate(msg.room);
         } catch (err) {
-            console.log('join game failure ' + err)
+            console.log('join game failure ' + err);
             // send error to client that join game failed
             io.to(socket.id).emit('joinGameFailure', err);
         }

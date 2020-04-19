@@ -251,14 +251,11 @@ function createGame(name) {
  * @param {str} roomCode 
  */
 function joinGame(name, roomCode) {
-    roomCode = roomCode.trim().toUpperCase();
-    console.log('player ' + name + ' trying to join ' + roomCode);
+    roomCode = roomCode.trim().toUpperCase();;
     socket.emit('joinGame', { name: name, room: roomCode });
     listenToRoomNotifications(roomCode)
 
     socket.on('joinGameFailure', function(errorMsg) {
-        console.log('joingame failure ');
-        console.log(errorMsg)
         var errorDiv = document.getElementById('formPlaceholder');
         errorDiv.innerHTML = errorMsg;
     })
@@ -269,17 +266,13 @@ function joinGame(name, roomCode) {
  * @param {*} roomCode 
  */
 function listenToRoomNotifications(roomCode) {
-    console.log('listen to room notifications for ' + roomCode)
     socket.on(roomCode, function(msg) {
         if (msg.state) {
             var prevGameState = Object.assign({}, GameState);
             GameState = msg.state;
             GameState.players = new Map(JSON.parse(msg.state.players))
-            console.log(GameState);
             if (JSON.stringify(prevGameState) !== JSON.stringify(GameState)) {
-                console.log('about to rerender board for player ' + playerId);
                 if (playerId != null) {
-                    console.log('rerender board');
                     renderBoard(prevGameState);
                 }
             }
@@ -322,39 +315,33 @@ function applyMove(move, event) {
         case MoveType.PLAY_ANSWER_CARD:
             // judge players can't do this
             if (isJudge || (!isJudge && playerDrewNewCard)) {
-                console.log('invalid turn');
                 return;
             }
             break;
         case MoveType.UNDO_PLAY_ANSWER_CARD:
             // judge players can't do this
             if (isJudge || (!isJudge && playerDrewNewCard)) {
-                console.log('invalid turn 2');
                 return;
             }
             break;
         case MoveType.DRAW_NEW_ANSWER:
             if (isJudge ||  (!isJudge && playerHasFullHand)) {
-                console.log('invalid turn 3');
                 return;
             }
             break;
         case MoveType.CHOOSE_WINNER_CARD:
             if (!isJudge || (isJudge && winnerChosen)) {
-                console.log('invalid turn 4')
                 return;
             }
             break;
         case MoveType.DRAW_NEW_QUESTION:
             // only draw new question if a winner has been choosen
             if (!winnerChosen) {
-                console.log('invalid turn 5')
                 return;
             }
         default:
             break;
     }
-    console.log('apply valid move ' + move)
     socket.emit('move', {
         answer: answer,
         gameRoom: GameState.gameId,
@@ -497,8 +484,6 @@ function renderNotification() {
  * @param {str} answer 
  */
 function createCardCombo(question, answer) {
-    console.log(question)
-    console.log(answer)
     var cardHolder = document.createElement('div');
     cardHolder.className = 'card-combo';
     var cardDiv = createFaceUpNonactiveAnswerCard(answer);
@@ -625,7 +610,6 @@ function renderModal(modalType, playerPreview=null) {
         winnerStatement += winnerPlayer.id === playerId ? "You won!" : "Winner is " + winnerPlayer.name + '!';
         winnerStatement += "</h4>";
         modalContent.innerHTML += winnerStatement;
-        console.log('winner is ' + GameState.winnerCard)
         var cardHolder = createCardCombo(GameState.currentQuestion, GameState.winnerCard);
         modalContent.appendChild(cardHolder);
     } else if (modalType === ModalType.PREVIEW_PLAYER_CARD_COMBOS) {
