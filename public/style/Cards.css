@@ -212,11 +212,13 @@ h1 {
     font-size: .6rem; 
     margin: 1rem 1rem;
     border: .05rem solid #cccccc !important;
-    color: #1a1a1a;
+    background-color: #111111;
+    color: #ffffff;
 }
 
 .player-preview .card:hover {
-    background-color:#E5F4F4;
+    background-color: #333333;
+    color: #f2f2f2;
 }
 
 #currentPlayer {

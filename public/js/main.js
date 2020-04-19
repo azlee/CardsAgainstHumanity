@@ -376,9 +376,12 @@ function renderQuestionCard() {
     var prevQuestion = document.getElementById('active-question').innerHTML;
     var currQuestion = GameState.currentQuestion.replace("%s", "____________");
     if (prevQuestion !== currQuestion)
-    $("#active-question").slideUp(200, function() {
-        $(this).html(currQuestion).slideDown(200);
+    $("#active-question").html('').hide("clip", {direction: "horizontal"}, 300, function() {
+        $(this).show("clip", {direction: "horizontal"}, 300);
     });
+    setTimeout(function() {
+        $("#active-question").html(currQuestion);
+    }, 600);
 }
 
 /**
@@ -523,14 +526,12 @@ function renderCardsInPlay() {
     for (var [_, player] of GameState.players) {
         var answerCard = player.finalCard;
         if (!player.finalCard && GameState.judge !== player.id) {
-            console.log('1')
             // create placeholder with the player's name
             var placeholder = createCardPlayerPlaceHolder(player.name);
             placeholder.id = "answerCard-" + cardNum;
             finalAnswers.appendChild(placeholder);
         } else if (GameState.judge !== player.id) {
             if (didEveryoneDraw() || GameState.gameStatus === GameStatus.WINNER_CHOSEN) {
-                console.log('2')
                 // leave the cards face up with choose winner move
                 // TODO: Card should be active if it's the judge (so they can choose winner)
                 var faceUpAnswer = playerId === GameState.judge ? createFaceUpAnswerCard(answerCard) : createFaceUpNonactiveAnswerCard(answerCard);
@@ -546,7 +547,6 @@ function renderCardsInPlay() {
                 faceUpAnswer.id = "answerCard-" + cardNum;
                 finalAnswers.appendChild(faceUpAnswer);
             } else if (myFinalAnswer && myFinalAnswer === answerCard && player.state != PlayerState.DREW_NEW_CARD && GameState.gameStatus != GameStatus.ALL_CARDS_PLAYED) {
-                console.log('3')
                 var faceUpAnswer = createFaceUpAnswerCard(myFinalAnswer);
                 faceUpAnswer.addEventListener("click", function(event) {
                     applyMove(MoveType.UNDO_PLAY_ANSWER_CARD, event);
@@ -554,7 +554,6 @@ function renderCardsInPlay() {
                 faceUpAnswer.id = "answerCard-" + cardNum;
                 finalAnswers.appendChild(faceUpAnswer);
             } else if (answerCard && GameState.gameStatus != GameStatus.ALL_CARDS_REVEALED) {
-                console.log('4')
                 var card = createFaceDownAnswerCard();
                 card.id = "answerCard-" + cardNum;
                 finalAnswers.appendChild(card);
