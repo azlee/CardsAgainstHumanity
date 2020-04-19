@@ -62,6 +62,15 @@ h1 {
     border: .1rem dashed #999999;
 }
 
+.placeholder-player-name {
+    color: #999999;
+    background-color: #e6e6e6;
+    border: .1rem dashed #999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .answer:hover {
     background-color: #E5F4F4;
 }

@@ -359,19 +359,13 @@ function applyMove(move, event) {
  * 
  ****************************************************************************/
 
-
 /**
  * Reveal answer cards in middle by "flipping" them over.
  */
 function revealAnswers() {
-    var a = 0;
-    var centerCards = document.getElementById('final-answers');
-    var isJudge = playerId === GameState.judge;
-    for (var node of centerCards.childNodes) {
-        node.className = isJudge ? "card answer" : "card nonactive-answer";
-        node.innerHTML = GameState.answerCards[a];
-        a++;
-    }
+    $("#final-answers").children().each(function (i, e) {
+        $(this).delay(600 * i).animate({borderWidth: '6px'}, 400, 'swing');
+    });
     GameState.gameStatus = GameStatus.ALL_CARDS_REVEALED;
 }
 
@@ -379,7 +373,12 @@ function revealAnswers() {
  * Render the question card.
  */
 function renderQuestionCard() {
-    document.getElementById('active-question').innerHTML = GameState.currentQuestion.replace("%s", "____________");
+    var prevQuestion = document.getElementById('active-question').innerHTML;
+    var currQuestion = GameState.currentQuestion.replace("%s", "____________");
+    if (prevQuestion !== currQuestion)
+    $("#active-question").slideUp(200, function() {
+        $(this).html(currQuestion).slideDown(200);
+    });
 }
 
 /**
@@ -518,41 +517,54 @@ function createCardCombo(question, answer) {
 function renderCardsInPlay() {
     let finalAnswers = document.getElementById('final-answers');
     finalAnswers.innerHTML = '';
-    var player = getPlayer(playerId);
-    for (var answerCard of GameState.answerCards) {
-        var myFinalAnswer = player.finalCard;
-        if (didEveryoneDraw() || GameState.gameStatus === GameStatus.WINNER_CHOSEN) {
-            // leave the cards face up with choose winner move
-            // TODO: Card should be active if it's the judge (so they can choose winner)
-            var faceUpAnswer = playerId === GameState.judge ? createFaceUpAnswerCard(answerCard) : createFaceUpNonactiveAnswerCard(answerCard);
-            faceUpAnswer.addEventListener("click", function(event) {
-                applyMove(MoveType.CHOOSE_WINNER_CARD, event);
-            }, false);
-            // if the card is the winning card then add green border to it
-            if (GameState.gameStatus === GameStatus.WINNER_CHOSEN) {
-                if (answerCard === GameState.winnerCard) {
-                    faceUpAnswer.className += " winning-card";
+    var myPlayer = getPlayer(playerId);
+    var myFinalAnswer = myPlayer.finalCard;
+    var cardNum = 0;
+    for (var [_, player] of GameState.players) {
+        var answerCard = player.finalCard;
+        if (!player.finalCard && GameState.judge !== player.id) {
+            console.log('1')
+            // create placeholder with the player's name
+            var placeholder = createCardPlayerPlaceHolder(player.name);
+            placeholder.id = "answerCard-" + cardNum;
+            finalAnswers.appendChild(placeholder);
+        } else if (GameState.judge !== player.id) {
+            if (didEveryoneDraw() || GameState.gameStatus === GameStatus.WINNER_CHOSEN) {
+                console.log('2')
+                // leave the cards face up with choose winner move
+                // TODO: Card should be active if it's the judge (so they can choose winner)
+                var faceUpAnswer = playerId === GameState.judge ? createFaceUpAnswerCard(answerCard) : createFaceUpNonactiveAnswerCard(answerCard);
+                faceUpAnswer.addEventListener("click", function(event) {
+                    applyMove(MoveType.CHOOSE_WINNER_CARD, event);
+                }, false);
+                // if the card is the winning card then add green border to it
+                if (GameState.gameStatus === GameStatus.WINNER_CHOSEN) {
+                    if (answerCard === GameState.winnerCard) {
+                        faceUpAnswer.className += " winning-card";
+                    }
                 }
+                faceUpAnswer.id = "answerCard-" + cardNum;
+                finalAnswers.appendChild(faceUpAnswer);
+            } else if (myFinalAnswer && myFinalAnswer === answerCard && player.state != PlayerState.DREW_NEW_CARD && GameState.gameStatus != GameStatus.ALL_CARDS_PLAYED) {
+                console.log('3')
+                var faceUpAnswer = createFaceUpAnswerCard(myFinalAnswer);
+                faceUpAnswer.addEventListener("click", function(event) {
+                    applyMove(MoveType.UNDO_PLAY_ANSWER_CARD, event);
+                }, false);
+                faceUpAnswer.id = "answerCard-" + cardNum;
+                finalAnswers.appendChild(faceUpAnswer);
+            } else if (answerCard && GameState.gameStatus != GameStatus.ALL_CARDS_REVEALED) {
+                console.log('4')
+                var card = createFaceDownAnswerCard();
+                card.id = "answerCard-" + cardNum;
+                finalAnswers.appendChild(card);
             }
-            finalAnswers.appendChild(faceUpAnswer);
-        } else if (myFinalAnswer && myFinalAnswer === answerCard && player.state != PlayerState.DREW_NEW_CARD && GameState.gameStatus != GameStatus.ALL_CARDS_PLAYED) {
-            var faceUpAnswer = createFaceUpAnswerCard(myFinalAnswer);
-            faceUpAnswer.addEventListener("click", function(event) {
-                applyMove(MoveType.UNDO_PLAY_ANSWER_CARD, event);
-            }, false);
-            finalAnswers.appendChild(faceUpAnswer);
-        } else if (answerCard && GameState.gameStatus != GameStatus.ALL_CARDS_REVEALED) {
-            finalAnswers.appendChild(createFaceDownAnswerCard());
         }
+        cardNum++;
     }
     // if all the players have minus judge are in drew new card state then reveal
     if (didEveryoneDraw() && GameState.gameStatus != GameStatus.WINNER_CHOSEN) {
         revealAnswers();
-    }
-    // create placeholders for rest of cards
-    var numPlaceholders = GameState.players.size - GameState.answerCards.length - 1;
-    for (var i = 0; i < numPlaceholders; i++) {
-        finalAnswers.appendChild(createCardPlaceHolder());
     }
 }
 
@@ -863,6 +875,18 @@ function createPlayerPreviewCard(playerName, playerRole, playerState) {
 function createCardPlaceHolder() {
     var emptyCard = document.createElement('div');
     emptyCard.className = 'card placeholder';
+    return emptyCard;
+}
+
+/**
+ * Creates a card place holder with playerName in center.
+ * @param {str} playerName - name of player name to display in card center
+ * @returns {div} - card placeholder
+ */
+function createCardPlayerPlaceHolder(playerName) {
+    var emptyCard = document.createElement('div');
+    emptyCard.className = 'card placeholder-player-name ';
+    emptyCard.innerHTML = playerName;
     return emptyCard;
 }
 

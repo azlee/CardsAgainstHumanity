@@ -566,8 +566,9 @@ function initNewGame(name, socketId) {
  */
 function removePlayerFromGame(gameRoomId, playerId) {
     var gameRoom = GAME_LOBBIES.get(gameRoomId).gameState;
-    if (!gameRoom || !gameRoom.players) { return; }
+    if (!gameRoom || gameRoom.players.size === 0) { return; }
     var player = gameRoom.players.get(playerId);
+    if (!player) { return; }
     // transfer the player's cards to discard piles
     gameRoom.discardAnswers = gameRoom.discardAnswers.concat(player.cardsInHand);
     if (player.finalCard) {
