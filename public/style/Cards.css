@@ -36,24 +36,24 @@ h1 {
 .answer {
     color: black;
     background-color: white;
-    border: .1rem solid #999999;
+    border: .1rem solid #111111;
 }
 
 .nonactive-answer {
     color: black;
     background-color: white;
-    border: .1rem solid #999999;
+    border: .1rem solid #111111;
 }
 
 .answer-winner {
     color: black;
     background-color: white;
-    border: .1rem solid #999999;
+    border: .1rem solid #111111;
 }
 
 .back {
     font-size: 1.2rem;
-    border: .1rem solid #999999;
+    border: .1rem solid #111111;
 }
 
 .placeholder {
@@ -121,8 +121,7 @@ h1 {
 }
 
 #question-draw-pile:hover {
-    background-color: #333333;
-    color: #f2f2f2;
+    filter: drop-shadow(1rem 1rem 1rem gray);
 }
 
 #notification {
@@ -222,8 +221,7 @@ h1 {
 }
 
 .player-preview .card:hover {
-    background-color: #333333;
-    color: #f2f2f2;
+    filter: drop-shadow(1rem 1rem 1rem gray);
 }
 
 #currentPlayer {
