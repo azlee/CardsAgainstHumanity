@@ -36,24 +36,24 @@ h1 {
 .answer {
     color: black;
     background-color: white;
-    border: .1rem solid #111111;
+    border: .05rem solid #111111;
 }
 
 .nonactive-answer {
     color: black;
     background-color: white;
-    border: .1rem solid #111111;
+    border: .05rem solid #111111;
 }
 
 .answer-winner {
     color: black;
     background-color: white;
-    border: .1rem solid #111111;
+    border: .05rem solid #111111;
 }
 
 .back {
     font-size: 1.2rem;
-    border: .1rem solid #111111;
+    border: .05rem solid #111111;
 }
 
 .placeholder {
@@ -221,7 +221,7 @@ h1 {
 }
 
 .player-preview .card:hover {
-    filter: drop-shadow(1rem 1rem 1rem gray);
+    filter: drop-shadow(.5rem .5rem .5rem gray);
 }
 
 #currentPlayer {
