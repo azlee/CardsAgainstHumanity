@@ -365,7 +365,7 @@ function applyMove(move, event) {
  */
 function revealAnswers() {
     $("#final-answers").children().each(function (i, e) {
-        $(this).delay(600 * i).animate({borderWidth: '6px'}, 400, 'swing');
+        $(this).delay(600 * i).animate({boxShadow: "1px 1px 2px 2px #808080"}, 400, 'swing');
     });
     GameState.gameStatus = GameStatus.ALL_CARDS_REVEALED;
 }
