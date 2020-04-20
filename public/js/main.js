@@ -364,9 +364,6 @@ function applyMove(move, event) {
  * Reveal answer cards in middle by "flipping" them over.
  */
 function revealAnswers() {
-    $("#final-answers").children().each(function (i, e) {
-        $(this).delay(600 * i).animate({boxShadow: "1px 1px 2px 2px #808080"}, 400);
-    });
     GameState.gameStatus = GameStatus.ALL_CARDS_REVEALED;
 }
 
