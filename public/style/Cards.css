@@ -156,6 +156,7 @@ h1 {
     font-size: 1rem;
     font-weight: bold;
     margin-left: 1rem;
+    border: .05rem solid #999999;
 }
 
 #score-board table {
