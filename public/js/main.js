@@ -150,7 +150,7 @@ const MoveType = {
 const NotificationType = {
     // non card czar notifications
     PICK_ANSWER: "Answer the question",
-    DRAW_NEW_CARD: "Draw new answer card to end your turn",
+    DRAW_NEW_CARD: "Draw new answer card to end your turn!",
     CARD_CZAR_CHOOSING: "Czar %s is choosing an answer...",
 
     // card czar notifications
@@ -418,7 +418,7 @@ function renderScores() {
  */
 function renderRoundNumber() {
     var roundDiv = document.getElementById('round-number');
-    roundDiv.style.border = '.12rem solid #4d4d4d';
+    roundDiv.style.border = '.13rem solid #4d4d4d';
     roundDiv.innerHTML = 'Room ' + GameState.gameId + ' | ' + 'Round ' + GameState.roundNum; 
 }
 

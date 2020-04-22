@@ -26,6 +26,7 @@ h1 {
     font-size:.95rem;
     font-variant: normal;
     word-wrap: break-word;
+    cursor: pointer;
 }
 
 .question {
@@ -60,6 +61,7 @@ h1 {
     color: #999999;
     background-color: #e6e6e6;
     border: .1rem dashed #999999;
+    cursor: default;
 }
 
 .placeholder-player-name {
@@ -99,7 +101,8 @@ h1 {
 #active-question {
     width: 8rem;
     height: 12rem;
-    font-size: 1rem; 
+    font-size: 1rem;
+    cursor: default;
 }
 
 #active-player-cards {
@@ -107,6 +110,7 @@ h1 {
 }
 
 #answer-draw-pile {
+    cursor: pointer;
     box-shadow: 1.5px 1.5px rgba(136, 136, 136, 0.5);
 }
 
@@ -116,6 +120,7 @@ h1 {
 }
 
 #question-draw-pile {
+    cursor: pointer;
     margin-left: 7rem;
     box-shadow: 1.5px 1.5px rgba(136, 136, 136, 0.5);
 }
@@ -294,6 +299,7 @@ h1 {
     border-radius: .4rem;
     margin: .75rem .75rem 1.2rem;
     padding: 1rem 1.3rem;
+    cursor: pointer;
     font-size: .8rem;
     -webkit-transition: all .15s ease-in-out;
     -moz-transition: all .15s ease-in-out;
