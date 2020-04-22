@@ -320,7 +320,7 @@ Cancel all my meetings. We've got a situation with %s that requires my immediate
 What do I regret doing most?
 My plan for world domination begins with %s.
 The CIA now interrogates enemy agents by subjecting them to %s.
-Welcome to Sen&‌ntilde;or Frog's! Would you like to try our signature cocktail, "%s on the Beach"?
+Welcome to Se&ntilde;or Frog's! Would you like to try our signature cocktail, "%s on the Beach"?
 Legend has it Prince without perform without %s in his dressing form.
 I love being a mom. But it's tough when my kids come home filthy from %s. That's why there's Tide&reg;.
 Oh, the weather outside is frightful. But %s is so delightful.

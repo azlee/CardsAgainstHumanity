@@ -23,7 +23,7 @@ h1 {
     margin: 0.3rem;
     font-family: "Helvetica Neue", Helvetica, Arial,sans-serif;
     font-weight: bolder;
-    font-size:.85rem;
+    font-size:.95rem;
     font-variant: normal;
     word-wrap: break-word;
 }
@@ -99,7 +99,7 @@ h1 {
 #active-question {
     width: 8rem;
     height: 12rem;
-    font-size: .9rem; 
+    font-size: 1rem; 
 }
 
 #active-player-cards {
@@ -126,7 +126,7 @@ h1 {
 
 #notification {
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     font-style: italic;
 }
@@ -153,9 +153,14 @@ h1 {
 }
 
 #round-number {
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 1.2rem;
     margin-left: 1rem;
+    font-weight: bold;
+    padding-left: .2rem;
+    padding-right: .2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #score-board table {
@@ -213,7 +218,7 @@ h1 {
 .player-preview .card {
     width: 3rem;
     height: 4.5rem;
-    font-size: .6rem; 
+    font-size: .7rem; 
     margin: 1rem 1rem;
     border: .05rem solid #cccccc !important;
     background-color: #111111;
@@ -228,7 +233,7 @@ h1 {
     margin-top: 1.3rem;
     margin-left: 1.3rem;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 /* The Modal (background) */
@@ -250,7 +255,7 @@ h1 {
     text-align:left;
     width: 7rem;
     height: 10.5rem;
-    font-size: .8rem; 
+    font-size: .9rem; 
 }
 
 /* Modal Content */

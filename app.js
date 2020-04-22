@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-app.use(express.static('public'));
+app.use(express.static('./public'));
 var http = require('http').Server(app);
 var port = process.env.PORT || 3000;
 
@@ -526,14 +526,14 @@ function applyMove(gameRoom, move, answer, playerId) {
     } else if (move === MoveType.DRAW_NEW_ANSWER) {
         addCardToHand(gameRoom, playerId, getAnswerCard(gameRoom));
         GameState.players.get(playerId).state = PlayerState.DREW_NEW_CARD;
+        // if all players drew card then shuffle
+        if (didEveryoneDraw(gameRoom)) {
+            shuffleAnswers(gameRoom);
+        }
     } else if (move === MoveType.CHOOSE_WINNER_CARD) {
         chooseWinner(gameRoom, answer);
     } else if (move === MoveType.DRAW_NEW_QUESTION ) {
         newRound(gameRoom);
-    }
-    // if all players drew card then shuffle
-    if (didEveryoneDraw(gameRoom)) {
-        shuffleAnswers(gameRoom);
     }
     sendStateUpdate(gameRoom);
 }

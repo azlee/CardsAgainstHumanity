@@ -150,7 +150,7 @@ const MoveType = {
 const NotificationType = {
     // non card czar notifications
     PICK_ANSWER: "Answer the question",
-    DRAW_NEW_CARD: "Draw new answer card",
+    DRAW_NEW_CARD: "Draw new answer card to end your turn",
     CARD_CZAR_CHOOSING: "Czar %s is choosing an answer...",
 
     // card czar notifications
@@ -418,7 +418,8 @@ function renderScores() {
  */
 function renderRoundNumber() {
     var roundDiv = document.getElementById('round-number');
-    roundDiv.innerHTML = 'Room ' + GameState.gameId + ': ' + 'Round ' + GameState.roundNum; 
+    roundDiv.style.border = '.1rem solid #111111';
+    roundDiv.innerHTML = 'Room ' + GameState.gameId + ' | ' + 'Round ' + GameState.roundNum; 
 }
 
 /**
@@ -510,6 +511,7 @@ function createCardCombo(question, answer) {
     }
     return cardHolder;
 }
+
 /**
  * Render the answer cards in center.
  * Ensure that the active player's cards is flipped up if they haven't drawn a new card yet.
@@ -521,43 +523,41 @@ function renderCardsInPlay() {
     var myPlayer = getPlayer(playerId);
     var myFinalAnswer = myPlayer.finalCard;
     var cardNum = 0;
-    for (var [_, player] of GameState.players) {
-        var answerCard = player.finalCard;
-        if (!player.finalCard && GameState.judge !== player.id) {
-            // create placeholder with the player's name
-            var placeholder = createCardPlayerPlaceHolder(player.name);
-            placeholder.id = "answerCard-" + cardNum;
-            finalAnswers.appendChild(placeholder);
-        } else if (GameState.judge !== player.id) {
-            if (didEveryoneDraw() || GameState.gameStatus === GameStatus.WINNER_CHOSEN) {
-                // leave the cards face up with choose winner move
-                // TODO: Card should be active if it's the judge (so they can choose winner)
-                var faceUpAnswer = playerId === GameState.judge ? createFaceUpAnswerCard(answerCard) : createFaceUpNonactiveAnswerCard(answerCard);
-                faceUpAnswer.addEventListener("click", function(event) {
-                    applyMove(MoveType.CHOOSE_WINNER_CARD, event);
-                }, false);
-                // if the card is the winning card then add green border to it
-                if (GameState.gameStatus === GameStatus.WINNER_CHOSEN) {
-                    if (answerCard === GameState.winnerCard) {
-                        faceUpAnswer.className += " winning-card";
-                    }
-                }
-                faceUpAnswer.id = "answerCard-" + cardNum;
-                finalAnswers.appendChild(faceUpAnswer);
-            } else if (myFinalAnswer && myFinalAnswer === answerCard && player.state != PlayerState.DREW_NEW_CARD && GameState.gameStatus != GameStatus.ALL_CARDS_PLAYED) {
-                var faceUpAnswer = createFaceUpAnswerCard(myFinalAnswer);
-                faceUpAnswer.addEventListener("click", function(event) {
-                    applyMove(MoveType.UNDO_PLAY_ANSWER_CARD, event);
-                }, false);
-                faceUpAnswer.id = "answerCard-" + cardNum;
-                finalAnswers.appendChild(faceUpAnswer);
-            } else if (answerCard && GameState.gameStatus != GameStatus.ALL_CARDS_REVEALED) {
-                var card = createFaceDownAnswerCard();
-                card.id = "answerCard-" + cardNum;
-                finalAnswers.appendChild(card);
-            }
+    if (didEveryoneDraw() || GameState.gameStatus === GameStatus.WINNER_CHOSEN) {
+        for (var answerCard of GameState.answerCards) {
+            // leave the cards face up with choose winner move
+            // TODO: Card should be active if it's the judge (so they can choose winner)
+            var faceUpAnswer = playerId === GameState.judge ? createFaceUpAnswerCard(answerCard) : createFaceUpNonactiveAnswerCard(answerCard);
+            faceUpAnswer.addEventListener("click", function(event) {
+                applyMove(MoveType.CHOOSE_WINNER_CARD, event);
+            }, false);
+            faceUpAnswer.id = "answerCard-" + cardNum;
+            finalAnswers.appendChild(faceUpAnswer);
         }
-        cardNum++;
+    } else {
+        for (var [_, player] of GameState.players) {
+            var answerCard = player.finalCard;
+            if (!player.finalCard && GameState.judge !== player.id) {
+                // create placeholder with the player's name
+                var placeholder = createCardPlayerPlaceHolder(player.name);
+                placeholder.id = "answerCard-" + cardNum;
+                finalAnswers.appendChild(placeholder);
+            } else if (GameState.judge !== player.id) {
+                if (myFinalAnswer && myFinalAnswer === answerCard && player.state != PlayerState.DREW_NEW_CARD && GameState.gameStatus != GameStatus.ALL_CARDS_PLAYED) {
+                    var faceUpAnswer = createFaceUpAnswerCard(myFinalAnswer);
+                    faceUpAnswer.addEventListener("click", function(event) {
+                        applyMove(MoveType.UNDO_PLAY_ANSWER_CARD, event);
+                    }, false);
+                    faceUpAnswer.id = "answerCard-" + cardNum;
+                    finalAnswers.appendChild(faceUpAnswer);
+                } else if (answerCard && GameState.gameStatus != GameStatus.ALL_CARDS_REVEALED) {
+                    var card = createFaceDownAnswerCard();
+                    card.id = "answerCard-" + cardNum;
+                    finalAnswers.appendChild(card);
+                }
+            }
+            cardNum++;
+        }
     }
     // if all the players have minus judge are in drew new card state then reveal
     if (didEveryoneDraw() && GameState.gameStatus != GameStatus.WINNER_CHOSEN) {
@@ -622,7 +622,7 @@ function renderModal(modalType, playerPreview=null) {
         addDisableEnableButton();
     } else if (modalType === ModalType.WINNING_CARD) {
         var winnerPlayer = getWinnerPlayer(GameState.winnerCard);
-        var winnerStatement = '<h4 style="font-size:1.25rem;center;text-transform:uppercase;letter-spacing:0.15rem">';
+        var winnerStatement = '<h4 style="font-size:1.25rem;center;letter-spacing:0.15rem">';
         winnerStatement += winnerPlayer.id === playerId ? "You won!" : "Winner is " + winnerPlayer.name + '!';
         winnerStatement += "</h4>";
         modalContent.innerHTML += winnerStatement;
@@ -632,7 +632,7 @@ function renderModal(modalType, playerPreview=null) {
         // display all the winning card combos in the modal
         var comboHolder = document.createElement('div');
         comboHolder.className = 'card-holder';
-        var modalHeader = '<h4 style="font-size:1.25rem;center;text-transform:uppercase;letter-spacing:0.15rem">';
+        var modalHeader = '<h4 style="font-size:1.25rem;center;letter-spacing:0.15rem">';
         modalHeader += playerPreview + "'s winning cards";
         modalHeader += "</h4>";
         modalContent.innerHTML += modalHeader;
