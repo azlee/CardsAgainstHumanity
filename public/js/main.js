@@ -418,7 +418,7 @@ function renderScores() {
  */
 function renderRoundNumber() {
     var roundDiv = document.getElementById('round-number');
-    roundDiv.style.border = '.1rem solid #111111';
+    roundDiv.style.border = '.12rem solid #4d4d4d';
     roundDiv.innerHTML = 'Room ' + GameState.gameId + ' | ' + 'Round ' + GameState.roundNum; 
 }
 
