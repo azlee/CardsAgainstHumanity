@@ -37,12 +37,13 @@ h1 {
 .answer {
     color: black;
     background-color: white;
-    border: .05rem solid #111111;
+    border: .1rem solid #111111;
 }
 
 .nonactive-answer {
     color: black;
     background-color: white;
+    cursor: default;
     border: .05rem solid #111111;
 }
 
@@ -60,14 +61,14 @@ h1 {
 .placeholder {
     color: #999999;
     background-color: #e6e6e6;
-    border: .1rem dashed #999999;
+    border: .15rem dashed #999999;
     cursor: default;
 }
 
 .placeholder-player-name {
     color: #999999;
     background-color: #e6e6e6;
-    border: .1rem dashed #999999;
+    border: .15rem dashed #999999;
     display: flex;
     justify-content: center;
     align-items: center;
