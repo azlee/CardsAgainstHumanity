@@ -94,7 +94,7 @@ function getWinnerPlayer(winnerCard) {
  */
 function didEveryoneDraw() {
     for (let [_, player] of GameState.players) {
-        if (player.role != PlayerRole.JUDGE && player.state != PlayerState.DREW_NEW_CARD) {
+        if (player.role != PlayerRole.JUDGE && player.state != PlayerState.PLAYED_CARD) {
             return false;
         }
     }
@@ -143,7 +143,6 @@ const MoveType = {
     DRAW_NEW_QUESTION: "DRAW_NEW_QUESTION",
     // only non judges can do these moves
     PLAY_ANSWER_CARD: "PLAY_ANSWER_CARD",
-    UNDO_PLAY_ANSWER_CARD: "UNDO_PLAY_ANSWER_CARD",
     DRAW_NEW_ANSWER: "DRAW_NEW_ANSWER"
 }
 
@@ -156,10 +155,10 @@ const NotificationType = {
     // card czar notifications
     CHOOSE_FAVORITE_ANSWER: "Choose your favorite answer:",
     WAITING_FOR_OTHER_PLAYERS_TO_JOIN: "Waiting for more players to join..",
-    YOURE_CARD_CZAR: "You're the card czar. Wait for players to play &amp; draw card...",
+    YOURE_CARD_CZAR: "You're the card czar. Wait for players to play a card...",
 
     // card czar and non czar notifications
-    WAITING_FOR_PLAYERS: "Waiting for all players to play &amp; draw a card...",
+    WAITING_FOR_PLAYERS: "Waiting for all players to play a card...",
     DRAW_NEW_QUESTION_CARD: "Draw new question card to start new round"
 }
 
@@ -195,16 +194,6 @@ let GameState = {
 var playerId = null;
 
 /**
- * Add event listener to answer draw pile
- */
-function initializeDrawPile() {
-    var answerPile = document.getElementById('answer-draw-pile');
-    answerPile.addEventListener("click", function(event) {
-        applyMove(MoveType.DRAW_NEW_ANSWER, event);
-    }, false);
-}
-
-/**
  * Add event listener to question draw pile
  */
 function initializeQuestionDrawPile() {
@@ -238,7 +227,6 @@ var socket = io();
 function createGame(name) {
     socket.emit('createGame', { name: name.trim() });
     playerId = 0;
-    initializeDrawPile();
     initializeQuestionDrawPile();
     socket.on('createGameSuccess', function(gameRoom) {
         var modal = document.getElementById('myModal');
@@ -284,7 +272,6 @@ function listenToRoomNotifications(roomCode) {
             var modal = document.getElementById('myModal');
             modal.style.display = "none";
             renderBoardWithoutPrevStateCheck();
-            initializeDrawPile();
             initializeQuestionDrawPile();
         }
     });
@@ -308,7 +295,7 @@ function applyMove(move, event) {
     var answer = event.target.innerHTML;
     var isJudge = playerId === GameState.judge;
     var player = getPlayer(playerId);
-    var playerDrewNewCard = player.state === PlayerState.DREW_NEW_CARD;
+    var playerPlayed = player.state === PlayerState.PLAYED_CARD;
     var winnerChosen = GameState.gameStatus === GameStatus.WINNER_CHOSEN;
     var playerHasFullHand = getNumNonEmptyCards(player.cardsInHand) === GameState.numCardsPerPlayer;
     // verify that the player can make the specified move
@@ -316,13 +303,7 @@ function applyMove(move, event) {
     switch(move) {
         case MoveType.PLAY_ANSWER_CARD:
             // judge players can't do this
-            if (isJudge || (!isJudge && playerDrewNewCard)) {
-                return;
-            }
-            break;
-        case MoveType.UNDO_PLAY_ANSWER_CARD:
-            // judge players can't do this
-            if (isJudge || (!isJudge && playerDrewNewCard)) {
+            if (isJudge || (!isJudge && playerPlayed)) {
                 return;
             }
             break;
@@ -451,15 +432,12 @@ function renderNotification() {
     var cardCzarName = getPlayer(GameState.judge).name;
     var didPlayerNotPlay = getPlayer(playerId).state === PlayerState.NOT_PLAYED_CARD;
     var didPlayerPlay = getPlayer(playerId).state === PlayerState.PLAYED_CARD;
-    var didPlayerDraw = getPlayer(playerId).state === PlayerState.DREW_NEW_CARD;
     var winnerChosen = GameState.winnerCard != null;
     var notification = '';
     if (!isJudge) {
         if (didPlayerNotPlay) {
             notification = NotificationType.PICK_ANSWER;
-        } else if (didPlayerPlay) {
-            notification = NotificationType.DRAW_NEW_CARD;
-        } else if (didPlayerDraw && !allAnswersSubmitted) {
+        } else if (didPlayerPlay && !allAnswersSubmitted) {
             notification = NotificationType.WAITING_FOR_PLAYERS;
         } else if (allAnswersSubmitted && !winnerChosen) {
             notification = NotificationType.CARD_CZAR_CHOOSING.replace("%s", cardCzarName);
@@ -520,17 +498,17 @@ function createCardCombo(question, answer) {
 function renderCardsInPlay() {
     let finalAnswers = document.getElementById('final-answers');
     finalAnswers.innerHTML = '';
-    var myPlayer = getPlayer(playerId);
-    var myFinalAnswer = myPlayer.finalCard;
     var cardNum = 0;
     if (didEveryoneDraw() || GameState.gameStatus === GameStatus.WINNER_CHOSEN) {
         for (var answerCard of GameState.answerCards) {
-            // leave the cards face up with choose winner move
-            // TODO: Card should be active if it's the judge (so they can choose winner)
             var faceUpAnswer = playerId === GameState.judge ? createFaceUpAnswerCard(answerCard) : createFaceUpNonactiveAnswerCard(answerCard);
-            faceUpAnswer.addEventListener("click", function(event) {
-                applyMove(MoveType.CHOOSE_WINNER_CARD, event);
-            }, false);
+            if (GameState.gameStatus != GameStatus.WINNER_CHOSEN) { 
+                faceUpAnswer.addEventListener("click", function(event) {
+                    applyMove(MoveType.CHOOSE_WINNER_CARD, event);
+                }, false);
+            } else if (GameState.winnerCard && GameState.winnerCard === answerCard) {
+                faceUpAnswer.className += " winning-card";
+            }
             faceUpAnswer.id = "answerCard-" + cardNum;
             finalAnswers.appendChild(faceUpAnswer);
         }
@@ -543,14 +521,7 @@ function renderCardsInPlay() {
                 placeholder.id = "answerCard-" + cardNum;
                 finalAnswers.appendChild(placeholder);
             } else if (GameState.judge !== player.id) {
-                if (myFinalAnswer && myFinalAnswer === answerCard && player.state != PlayerState.DREW_NEW_CARD && GameState.gameStatus != GameStatus.ALL_CARDS_PLAYED) {
-                    var faceUpAnswer = createFaceUpAnswerCard(myFinalAnswer);
-                    faceUpAnswer.addEventListener("click", function(event) {
-                        applyMove(MoveType.UNDO_PLAY_ANSWER_CARD, event);
-                    }, false);
-                    faceUpAnswer.id = "answerCard-" + cardNum;
-                    finalAnswers.appendChild(faceUpAnswer);
-                } else if (answerCard && GameState.gameStatus != GameStatus.ALL_CARDS_REVEALED) {
+                if (answerCard && GameState.gameStatus != GameStatus.ALL_CARDS_REVEALED) {
                     var card = createFaceDownAnswerCard();
                     card.id = "answerCard-" + cardNum;
                     finalAnswers.appendChild(card);

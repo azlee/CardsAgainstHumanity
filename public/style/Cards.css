@@ -125,10 +125,11 @@ h1 {
     cursor: pointer;
     margin-left: 7rem;
     box-shadow: 1.5px 1.5px rgba(136, 136, 136, 0.5);
+    filter: drop-shadow(.1rem .1rem 0rem #262626) drop-shadow(.2rem .2em 0rem #4d4d4d) drop-shadow(.3rem .3rem 0rem #737373) drop-shadow(.4rem .4rem 0rem #8c8c8c);
 }
 
 #question-draw-pile:hover {
-    filter: drop-shadow(1rem 1rem 1rem gray);
+    filter: drop-shadow(.1rem .1rem .1rem #262626) drop-shadow(.2rem .2em .1rem #4d4d4d) drop-shadow(.3rem .3rem .1rem #737373) drop-shadow(.4rem .4rem .1rem #8c8c8c);
 }
 
 #notification {
@@ -232,6 +233,7 @@ h1 {
     border: .05rem solid #1a1a1a !important;
     background-color: #9acece;
     color: #1a1a1a;
+    cursor: pointer;
 }
 
 .player-preview .card:hover {
@@ -261,7 +263,7 @@ h1 {
 }
 
 .modal img {
-    width: 75%;
+    width: 50%;
 }
 
 .modal .card {

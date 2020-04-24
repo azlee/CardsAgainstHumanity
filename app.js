@@ -206,7 +206,7 @@ function createGameRoom(gameRoomId) {
 function didEveryoneDraw(gameRoomId) {
     var GameState = getGameLobby(gameRoomId).gameState;
     for (let [_, player] of GameState.players) {
-        if (player.role != PlayerRole.JUDGE && player.state != PlayerState.DREW_NEW_CARD) {
+        if (player.role != PlayerRole.JUDGE && player.state != PlayerState.PLAYED_CARD) {
             return false;
         }
     }
@@ -506,30 +506,17 @@ function applyMove(gameRoom, move, answer, playerId) {
     }
     if (move === MoveType.PLAY_ANSWER_CARD) {
         // player is playing an answer card
-        var prevAnswer = GameState.players.get(playerId).finalCard;
         GameState.players.get(playerId).finalCard = answer;
-        if (prevAnswer) {
-            addCardToHand(gameRoom, playerId, prevAnswer);
-            removeCardFromHand(gameRoom, playerId, answer);
-            removeCardFromCenter(gameRoom, prevAnswer);
-            addCardToCenter(gameRoom, answer);
-        } else {
-            removeCardFromHand(gameRoom, playerId, answer);
-            addCardToCenter(gameRoom, answer);
-        }
-        GameState.players.get(playerId).state = PlayerState.PLAYED_CARD;
-    } else if (move === MoveType.UNDO_PLAY_ANSWER_CARD) {
-        addCardToHand(gameRoom, playerId, answer);
-        removeCardFromCenter(gameRoom, answer);
-        GameState.players.get(playerId).finalCard = null;
-        GameState.players.get(playerId).state = PlayerState.NOT_PLAYED_CARD;
-    } else if (move === MoveType.DRAW_NEW_ANSWER) {
+        removeCardFromHand(gameRoom, playerId, answer);
+        addCardToCenter(gameRoom, answer);
+        // draw new card for player
         addCardToHand(gameRoom, playerId, getAnswerCard(gameRoom));
-        GameState.players.get(playerId).state = PlayerState.DREW_NEW_CARD;
+        GameState.players.get(playerId).state = PlayerState.PLAYED_CARD;
         // if all players drew card then shuffle
         if (didEveryoneDraw(gameRoom)) {
             shuffleAnswers(gameRoom);
         }
+        GameState.players.get(playerId).state = PlayerState.PLAYED_CARD;
     } else if (move === MoveType.CHOOSE_WINNER_CARD) {
         chooseWinner(gameRoom, answer);
     } else if (move === MoveType.DRAW_NEW_QUESTION ) {

@@ -8,6 +8,7 @@ Coming to Broadway this season, %s: <i>The Musical</i>.
 %s. That's how I want to die.
 TSA guidelines now probihit %s on airplanes.
 Maybe she's born with it. Maybe it's %s.
+What's hot, smelly, and about to die?
 What's a girl's best friend?
 I'm sorry Professor, but I couldn't complete my homework because of %s.
 Today On <i>Maury</i>: "Help! My son is %s!"
@@ -41,7 +42,14 @@ What do old people smell like?
 What gets better with age?
 Sorry everyone, I just %s.
 White people like %s.
+Duuude. You have got to go to space. %s is awesome in space.
 Life was difficult for cavemen before %s.
+Some heros fight for justice, others for honor. I fight for %s.
+My fellow Americans: Before this decade is out, we will have %s on the moon!
+Life isn't just about getting laid, Gary. There's also %s.
+The Internet is hungry. It wants %s.
+Here's a little something I learned in business school: The customer is always %s.
+What does my future hold?
 Who stole the cookies from the cookie jar?
 What are my parents hiding from me?
 I drink to forget %s.
@@ -62,6 +70,7 @@ The U.S. has begun air-dropping %s to the children of Afghanistan.
 When I'm in prison, I'll have %s smuggled in.
 What's there a ton of in heaven?
 What will always get you laid?
+In the future, when robots have taken all the jobs, we will devote our energy to %s.
 What would grandma find disturbing, yet oddly charming?
 In the new Disney Channel Original Movie, Hannah Montana struggles with %s for the first time.
 %s? There's an app for that.
@@ -127,6 +136,7 @@ What DON'T you want to find in your fridge?
 What is passive aggressive?
 What makes you get out of bed in the morning?
 What does Donald Trump stand for?
+Millions of copies sold! Donald Trump's 'The Art of %s.'
 What are you avoiding?
 What is your goal in life?
 What are you scared of?
@@ -136,8 +146,21 @@ What do you regret eating?
 What are you tired of hearing about?
 What is the value of life for you?
 What would you want to be in another life?
+Personal foul: %s. 15 year penalty. Automatic first down.
 What scarred you?
+Oh my god Cindy! What happened to your face?!
+What sounds great after 5 shots of tequila?
+For hunting in the King's forest, I sentence you to death by %s.
+Oh my god guys, can we calm down about %s for 5 fucking seconds?
+As Teddy Roosevelt said, the four manly virtues are honor, temperance, industry, and %s.
+True love is %s.
+I so drunk, I %s.
+Knock knock. Who's there? %s.
+If only there were 26 hours in a day then I'd have time for %s.
+You can call me David Copperfield, because I'm about to make %s disappear.
 What sucks?
+Well if %s is a crime, then lock me up!
+Hey honey...for the bedroom, were you thinking 'Robin's egg blue' or '%s Pink'?
 I may not be much to look at, but I fuck like %s?
 Hey Reddit I'm %s ask me anything.
 Introducing X-treme Baseball!, It's like baseball but with %.
@@ -164,6 +187,7 @@ Hey guys, welcome to Chili's! Would you like to start the night off right with %
 Bravo's new reality show features eight washed-up celebrities living with %s.
 %s. That was so metal.
 During sex, I like to think about %s.
+I hate this job. I hate this place. Most of all I hate %s. I quit.
 Uh, hey guys, I know this was my idea, but I'm having serious doubts about %s.
 I'm not doctor, but I'm pretty sure what you're suffering from is called %s.
 After four platinum albums and three Grammys, it's time to get back to my roots, to what inspired me to make music in the first place: %s.
@@ -306,9 +330,14 @@ One small step for man, one giant leap for %s.
 We're off to see the Wizard, the Wonderful Wizard of %s!
 What was my old college nickname?
 What instantly calms me?
+Stop, Drop, Roll, and then %s!
+At the end of a double rainbow you can find %s.
 I can't believe my gyno asked for %s.
 %s on a crowded subway train is the shit.
+The worst theme for a pinball machine: %s.
+If I won the lottery I would buy %s.
 Kids react to %s on YouTube.
+Unfortunately, no one can be told what %s is. You have to experience it for yourself.
 OMG. I have %s.
 How would you describe me?
 I wish my partner would give me %s.
@@ -329,3 +358,4 @@ The food is so bad it tastes like %s.
 I would gladly pay $5 for %s.
 The first thing I do in the morning when I wake up is %s.
 What was my favorite thing to do during recess?
+Ain't it nifty?! Barb and Bob hit 50, so get off your ass and raise a glass to 50 years of %s.
