@@ -768,6 +768,10 @@ function createOptionForm() {
     }, false);
     createNewGameButton.innerHTML = 'CREATE NEW GAME';
     joinExistingButton.innerHTML = 'JOIN EXISTING GAME';
+    var img = document.createElement('img');
+    img.src = 'geneWilder2.jpg';
+    div.appendChild(img);
+    div.appendChild(document.createElement('br'));
     div.appendChild(createNewGameButton);
     div.appendChild(document.createElement('br'));
     div.appendChild(joinExistingButton);
@@ -787,6 +791,11 @@ function createPlayForm(newGame) {
     nameInput.id = 'nameInput';
     nameInput.maxLength = "15" 
     nameInput.placeholder = "ENTER YOUR NAME";
+    var img = document.createElement('img');
+    img.src = 'geneWilder2.jpg';
+    formDiv.appendChild(img);
+    formDiv.appendChild(document.createElement('br'));
+    formDiv.appendChild(document.createElement('br'));
     formDiv.appendChild(nameLabel);
     formDiv.appendChild(nameInput);
     formDiv.appendChild(document.createElement('br'));
