@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     margin:0;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #dbe7e7;
 }
 
 h1 { 
@@ -59,16 +60,16 @@ h1 {
 }
 
 .placeholder {
-    color: #999999;
-    background-color: #e6e6e6;
-    border: .15rem dashed #999999;
+    color: #8c8c8c;
+    background-color: #d9d9d9;
+    border: .15rem dashed #8c8c8c;
     cursor: default;
 }
 
 .placeholder-player-name {
-    color: #999999;
-    background-color: #e6e6e6;
-    border: .15rem dashed #999999;
+    color: #8c8c8c;
+    background-color: #d9d9d9;
+    border: .15rem dashed #8c8c8c;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -167,6 +168,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f2f2f2;
 }
 
 #score-board table {
@@ -176,11 +178,12 @@ h1 {
 #score-board th {
     height: .5rem;
     width: 4rem;
-    background-color: #bbdddd;
+    background-color: #9acece;
 }
 
 #score-board td {
     text-align: center;
+    background-color: #f2f2f2;
 }
 
 #score-board th, td {
@@ -226,9 +229,9 @@ h1 {
     height: 4.5rem;
     font-size: .7rem; 
     margin: 1rem 1rem;
-    border: .05rem solid #cccccc !important;
-    background-color: #111111;
-    color: #ffffff;
+    border: .05rem solid #1a1a1a !important;
+    background-color: #9acece;
+    color: #1a1a1a;
 }
 
 .player-preview .card:hover {
