@@ -183,7 +183,7 @@ let GameState = {
     gameStatus: GameStatus.WAITING_FOR_ANSWERS,
     // total number of players
     numPlayers: 5,
-    numCardsPerPlayer: 10,
+    numCardsPerPlayer: 12,
     players: new Map(), // map of Players id -> player
     questions: [],
     roundNum: 1,
