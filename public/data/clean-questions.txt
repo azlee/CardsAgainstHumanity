@@ -38,7 +38,6 @@ What's that smell?
 The class field trip was completely ruined by %s.
 Next on ESPN2, the World Series of %s.
 What will I bring back in time to convince people that I am a powerful wizard?
-How am I maintaining my relationship status?
 %s. It's a trap!
 I learned the hard way that you can't cheer up a grieving friend with %s.
 This is the prime of my life. I'm young, hot, and full of %s.
@@ -48,7 +47,6 @@ What really brings out the child in me?
 What are those whales singing about?
 After blacking out during New Year's Eve, I was awoken by %s.
 Do not fuck with me! I am literally %s right now.
-Tonight, we will have sex. And afterwards if you'd like, a little bit of %s.
 Justin Bieber "reeked of %s" when he was pulled over.
 The president is meeting with %s at the White House.
 %s, the best job ever!
@@ -58,7 +56,7 @@ Best thing about being a man is %s.
 %s can help any marraige.
 %s will immediately end any frat party.
 What's the crustiest?
-What do old people smell like?
+What do nice people smell like?
 %s: kid-tested, mother-approved.
 What gets better with age?
 Sorry everyone, I just %s.
@@ -90,12 +88,10 @@ I wish I hadn't lost the instruction manual for %s.
 The U.S. has begun air-dropping %s to the children of Afghanistan.
 When I'm in prison, I'll have %s smuggled in.
 What's there a ton of in heaven?
-What will always get you laid?
 In the future, when robots have taken all the jobs, we will devote our energy to %s.
 What would grandma find disturbing, yet oddly charming?
 In the new Disney Channel Original Movie, Hannah Montana struggles with %s for the first time.
 %s? There's an app for that.
-What turns me on?
 %s: Good to the last drop.
 %s: Kid-tested, mother-approved.
 What did Vin Diesel eat for dinner?
@@ -107,8 +103,6 @@ Sorry everyone, I just ate %s.
 What's the most emo?
 What's the new fad diet?
 What's the next HappyMeal&trade; toy?
-I got 99 problems but %s ain't one.
-When I pooped, what came out of my butt?
 What am I giving up for Lent?
 Why do I hurt all over?
 A romantic, candlelit dinner would be incomplete without %s.
@@ -133,7 +127,6 @@ I work out so that I can look good when I'm %s.
 I'd rather be %s.
 I'm having trouble finding a college which will allow me to pursue a degree in %s.
 I've got the fever and the only cure is more %s.
-%s isn't about sex, it's about power.
 The theme for our senior prom will be %s.
 %s means never having to say you're sorry.
 %s R Us.
@@ -141,7 +134,6 @@ If there's one thing you could change about me it would be %s.
 There's no crying in %s.
 They found %s in the dumpster behind the abortion clinic.
 Instead of her normal self, Cinderella should have turned into %s at midnight.
-Instead of the Jews, Hitler should have been more worried about %s.
 9 out of 10 doctors agree, %s twice a day prevents cancer.
 What brought the orgy to a screeching halt?
 A fortune teller told me I will live a life filled with %s.
@@ -156,8 +148,6 @@ What DON'T you want to find in your closet?
 What DON'T you want to find in your fridge?
 What is passive aggressive?
 What makes you get out of bed in the morning?
-What does Donald Trump stand for?
-Millions of copies sold! Donald Trump's 'The Art of %s.'
 What are you avoiding?
 What is your goal in life?
 What are you scared of?
@@ -175,7 +165,6 @@ For hunting in the King's forest, I sentence you to death by %s.
 Oh my god guys, can we calm down about %s for 5 fucking seconds?
 As Teddy Roosevelt said, the four manly virtues are honor, temperance, industry, and %s.
 True love is %s.
-I so drunk, I %s.
 Knock knock. Who's there? %s.
 If only there were 26 hours in a day then I'd have time for %s.
 You can call me David Copperfield, because I'm about to make %s disappear.
@@ -186,7 +175,6 @@ I may not be much to look at, but I fuck like %s?
 Hey Reddit I'm %s ask me anything.
 Introducing X-treme Baseball!, It's like baseball but with %.
 Dude, <i>do not</i> go in that bathroom. There's %s in there.
-How did I lose my virginity?
 Kids, I don't need drugs to get high. I'm high on %s.
 While the United States raced the Soviet Union to the moon, the Mexican government funneled millions of pesos into research on %s.
 I'm going on a cleanse this week. Nothing but kale juice and %s.
@@ -198,7 +186,6 @@ My fellow Americans: Before this decade is out, we <i>will</i> have %s on the mo
 This season at Steppenwolf, Samuel Beckett's classic existential play: <i>Waiting for %s</i>.
 Life for American Indians was forever changed when the White Man introduced them to %s.
 What's Teach for America using to inspire inner city students to succeed?
-What is George W. Bush thinking about right now?
 Juse saw this upsetting video! Please retweet!! #stop%s.
 Fun tip! When your man asks you to go down on him, try surprising him with %s instead.
 When I am President, I will create the Department of %s.
@@ -207,14 +194,12 @@ If you like %s, YOU MIGHT BE REDNECK.
 Hey guys, welcome to Chili's! Would you like to start the night off right with %s?
 Bravo's new reality show features eight washed-up celebrities living with %s.
 %s. That was so metal.
-During sex, I like to think about %s.
 I hate this job. I hate this place. Most of all I hate %s. I quit.
 Uh, hey guys, I know this was my idea, but I'm having serious doubts about %s.
 I'm no doctor, but I'm pretty sure what you're suffering from is called %s.
 After four platinum albums and three Grammys, it's time to get back to my roots, to what inspired me to make music in the first place: %s.
 After eight years in the White House, how is Obama finally letting loose?
 But before I kill you, Mr. Bond, I must show you %s.
-A recent laboratory study shows that undergraduates have 50% less sex after being exposed to %s.
 When I am a billionaire, I shall erect a 50-foot statue to commemorate %s.
 Military historians remember Alexander the Great for his brilliant use of %s against the Persians.
 War!<br> What is it good for?
@@ -238,23 +223,19 @@ Errbody in the club %s.
 The top Google auto-complete results for "Barack Obama": <i>Barack Obama height.<br>Barack Obama net worth.<br> Barack Obama %s</i>
 Son, take it from someone who's bee around the block a few times. Nothin' puts her in the mood like %s.
 Art isn't just a painting in a stuffy museum. Art is alive.<br>Art is %s.
-You won't believe what's in my pussy. It's %s.
 What's the most problematic?
 Feeling so grateful! #amazing #mylife #%s.
-What's the gayest?
 Girls just wanna have %s.
 A man's best friend is %s.
 One more thing. Watch out for Big Mike. They say he killed a man with %s.
-Well, shit. My eyes ain't so good, but I'll eat my own boot if that ain't %s!
+Well, darn. My eyes ain't so good, but I'll eat my own boot if that ain't %s!
 If at first you don't succeed, try %s.
-What will end racism once and for all?
-I'll take the BBQ bacon burger with a fried egg and fuck it how about %s.
+I'll take the BBQ bacon burger with a fried egg and screw it how about %s.
 Well if %s is a crime, then lock me up!
 We do not shake with our left hands in this country. That is the hand we use for %s.
-Who know who else liked %s? <br>Hitler.
 Poor Brandon living in his parents' basement. I heard he never got over %s.
 What totally destroyed my asshole?
-I don't believe in God. I believe in %s.
+I believe in %s.
 Then the princess kissed the frog, and all of a sudden the frog was %s!
 I've got rhythm, I've got music, I've got %s. Who could ask for anything more?
 No, no, no, no, no, no, NO!<br> I will not let %s ruin this wedding.
@@ -266,26 +247,19 @@ I like big %s and I cannot lie.
 LSD + %s = really bad time.
 What are all those whales singing about?
 As Teddy Roosevelt said, the four manly virtues are honor, temperence, industry, and %s.
-I tell you, it was a non-stop orgy. When it was over, my asshole looked like %s.
-What turned me into a Republican?
 I'm sorry, sir, but your insurance plan doesn't cover injuries caused by %s.
 Run, run, as fast as you can! You can't catch me, I'm %s!
 There is no God. It's just %s and then you die.
 She's just one of the guys, you know? She likes beer, and football, and %s.
 This Friday at the Liquid Lounge, it's %s Night! Ladies drink free.
-What sucks balls?
 I've had a horrible vision, father. I saw mountains crumbling, stars falling from the sky. I saw %s.
 Oh no! Siri, how do I fix %s?
 Dance like there's nobody watching, love like you'll never be hurt, and live like you're %s.
 Mom's to-do list:<br><li>Buy groceries</li><li>Clean up %s</li><li>Soccer practice</li>
-Why am I laughing and crying and taking off my clothes?
-She's a lady in the streets, %s in the sheets.
 What's about to take this dance floor to the next level?
 CNN breaking news! Scientists discover %s.
 Most Americans would not vote for a candidate who is openly %s.
 Congratulations! You have been selected for our summer internship program. While we are unable to offer a salary, we <i>can</i> offer you %s.
-In the 1950s, psychologists prescribed %s as a cure for homosexuality.
-As reparations for slavary, all African Americans will receive %s.
 With a one-time gift of just $10, you can save this child from %s.
 Google Calendar alert: %s in 10 minutes.
 Class, pay close attention. I will now demonstrate the physics of %s.
@@ -354,7 +328,7 @@ What instantly calms me?
 Stop, Drop, Roll, and then %s!
 At the end of a double rainbow you can find %s.
 I can't believe my gyno asked for %s.
-%s on a crowded subway train is the shit.
+%s on a crowded subway train is the worst.
 The worst theme for a pinball machine: %s.
 If I won the lottery I would buy %s.
 Kids react to %s on YouTube.
@@ -364,7 +338,6 @@ How would you describe me?
 I wish my partner would give me %s.
 People thought I was crazy when I told them that I was going to %s.
 %s. I would never leave home without it!
-"Everything is about sex. Except sex. Sex is about %s."
 Coming soon to Netflix, "House of %s."
 Cancel all my meetings. We've got a situation with %s that requires my immediate attention.
 What do I regret doing most?
