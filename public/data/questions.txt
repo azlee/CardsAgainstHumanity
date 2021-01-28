@@ -225,7 +225,7 @@ Girls just wanna have %s.
 A man's best friend is %s.
 One more thing. Watch out for Big Mike. They say he killed a man with %s.
 Well, shit. My eyes ain't so good, but I'll eat my own boot if that ain't %s!
-If at first you don't succeed, try $s.
+If at first you don't succeed, try %s.
 What will end racism once and for all?
 I'll take the BBQ bacon burger with a fried egg and fuck it how about %s.
 Well if %s is a crime, then lock me up!
