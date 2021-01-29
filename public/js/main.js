@@ -228,9 +228,10 @@ var socket = io();
 /**
  * Create a new game with first player with name
  * @param {str} name - name of first player
+ * @param {GameVersion} version - rating of game - PG vs PG-13
  */
-function createGame(name) {
-    socket.emit('createGame', { name: name.trim() });
+function createGame(name, version) {
+    socket.emit('createGame', { name: name.trim(), version: version });
     playerId = 0;
     initializeQuestionDrawPile();
     socket.on('createGameSuccess', function(gameRoom) {
@@ -816,7 +817,7 @@ function createPlayForm(newGame) {
     button.disabled = true;
     if (newGame) {
         button.addEventListener("click", function(event) {
-            createGame(document.getElementById('nameInput').value);
+            createGame(document.getElementById('nameInput').value, document.getElementById('cleanSelect').value);
         });
     } else {
         button.addEventListener("click", function(event) {

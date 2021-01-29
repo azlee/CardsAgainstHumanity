@@ -142,11 +142,12 @@ function getCardHand(numCards, gameRoom) {
  /**
  * Initialize game state
  * @param {str} gameId
+ * @param {str} version - PG vs PG-13
  */
- function initializeGameState(gameId) {
+ function initializeGameState(gameId, version) {
     var GameState = {
         // all unused answers
-        answers: shuffle(fs.readFileSync('public/data/answers.txt').toString().split("\n")),
+        answers: shuffle(fs.readFileSync(version === "PG" ? 'public/data/clean-answers.txt' : 'public/data/answers.txt').toString().split("\n")),
         // answer cards in play (in center)
         answerCards: [],
         discardAnswers: [],
@@ -157,7 +158,7 @@ function getCardHand(numCards, gameRoom) {
         // total number of players
         numCardsPerPlayer: NUMBER_CARDS_PER_PLAYER,
         players: new Map(), // pseudo map of Players
-        questions: shuffle(fs.readFileSync('public/data/questions.txt').toString().split("\n")),
+        questions: shuffle(fs.readFileSync(version === "PG" ? 'public/data/clean-questions.txt' : 'public/data/questions.txt').toString().split("\n")),
         roundNum: 1,
         winnerCard: null,
     };
@@ -189,11 +190,12 @@ function initializePlayer(id, name, gameRoom) {
 /**
  * Create a game room with the game room id
  * @param {str} gameRoomId 
+ * @param {str} version - PG or PG-13
  */
-function createGameRoom(gameRoomId) {
+function createGameRoom(gameRoomId, version) {
     var gameRoom = {
         gameId: gameRoomId,
-        gameState: initializeGameState(gameRoomId),
+        gameState: initializeGameState(gameRoomId, version),
         playerNames: [],
         maxPlayers: MAX_NUMBER_PLAYERS,
     }
@@ -528,11 +530,12 @@ function applyMove(gameRoom, move, answer, playerId) {
 /**
  * Initialize a new game with one player that has the socket id
  * @param {str} name first player joining new game
+ * @param {str} version PG vs PG-13
  * @param {str} socketId the socketId of first player connection
  */
-function initNewGame(name, socketId) {
+function initNewGame(name, version, socketId) {
    var gameRoomCode = generateRoomCode();
-   var gameRoom = createGameRoom(gameRoomCode);
+   var gameRoom = createGameRoom(gameRoomCode, version);
    GAME_LOBBIES.set(gameRoomCode, gameRoom);
    var GameState = GAME_LOBBIES.get(gameRoomCode).gameState;
    GameState.currentQuestion = getQuestionCard(gameRoomCode);
@@ -603,7 +606,7 @@ io.on('connection', function(socket) {
     });
     socket.on('createGame', function(msg) {
         try {
-            var gameRoomId = initNewGame(msg.name, socket.id);
+            var gameRoomId = initNewGame(msg.name, msg.version, socket.id);
             // send notification of game room code to player
             io.to(socket.id).emit('createGameSuccess', gameRoomId);
             sendStateUpdate(gameRoomId);
