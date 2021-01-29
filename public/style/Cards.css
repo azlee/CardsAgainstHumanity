@@ -3,7 +3,6 @@ html, body {
     height: 100%;
     margin:0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #dbe7e7;
 }
 
 h1 { 
@@ -38,7 +37,8 @@ h1 {
 .answer {
     color: black;
     background-color: white;
-    border: .1rem solid #111111;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 0.25rem #111111;
 }
 
 .nonactive-answer {
@@ -76,7 +76,8 @@ h1 {
 }
 
 .answer:hover {
-    filter: drop-shadow(1rem 1rem 1rem gray);
+    box-shadow:  .25rem .25rem .5rem gray;
+    border: none;
 }
 
 .card-empty {
@@ -169,7 +170,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f2f2f2;
+    color: #666666;
 }
 
 #score-board table {
@@ -179,16 +180,16 @@ h1 {
 #score-board th {
     height: .5rem;
     width: 4rem;
-    background-color: #9acece;
+    background-color: #bbdddd;
 }
 
 #score-board td {
     text-align: center;
-    background-color: #f2f2f2;
+    background-color: #ffffff;
 }
 
 #score-board th, td {
-    border: 1px solid black;
+    border: 1px solid #a6a6a6;
     padding: .2rem .2rem;
 }
 
@@ -230,8 +231,8 @@ h1 {
     height: 4.5rem;
     font-size: .7rem; 
     margin: 1rem 1rem;
-    border: .05rem solid #1a1a1a !important;
-    background-color: #9acece;
+    border: none !important;
+    background-color: #bbdddd;
     color: #1a1a1a;
     cursor: pointer;
 }
@@ -241,6 +242,7 @@ h1 {
 }
 
 #currentPlayer {
+    color: #4d4d4d;
     margin-top: 1.3rem;
     margin-left: 1.3rem;
     font-weight: bold;
@@ -305,12 +307,22 @@ h1 {
 .modal-content button {
     font-weight: bold;
     letter-spacing: .05rem;
-    background-color: #bbdddd;
-    border-radius: .4rem;
+    background-color: #66b2b2;
     margin: .75rem .75rem 1.2rem;
-    padding: 1rem 1.3rem;
+    padding: 1rem 1rem;
     cursor: pointer;
-    font-size: .8rem;
+    display:inline-block;
+    border-radius :0.15em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto',sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #FFFFFF;
+    box-shadow: inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+    text-align: center;
+    position: relative;
+    border: none;
     -webkit-transition: all .15s ease-in-out;
     -moz-transition: all .15s ease-in-out;
     -o-transition: all .15s ease-in-out;
@@ -319,7 +331,7 @@ h1 {
 }
 
 .modal-content button:hover {
-    background-color: #99cccc;
+    background-color: #4d9999;
 }
 
 /* The Close Button */

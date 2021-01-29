@@ -112,7 +112,7 @@ var SOCKETS_MAP = new Map(); /* ex. { socketId1: { playerId: 0, gameRoomCode: BO
 const MAX_NUMBER_PLAYERS = 20;
 
 /* Number of cards per player */
-const NUMBER_CARDS_PER_PLAYER = 12;
+const NUMBER_CARDS_PER_PLAYER = 10;
 
 var INVALID_ROOM_CODE_ERROR = "Invalid room code";
 var MAX_PLAYERS_ERROR = "Too many players in this room";
