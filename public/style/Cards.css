@@ -308,6 +308,14 @@ h1 {
     font-size: 1.25rem;
 }
 
+.modal-content button:disabled, button[disabled] {
+    background-color: #aad4d4;
+}
+
+.modal-content button:disabled:hover, button[disabled]:hover {
+    background-color: #aad4d4;
+}
+
 .modal-content button {
     font-weight: bold;
     letter-spacing: .05rem;

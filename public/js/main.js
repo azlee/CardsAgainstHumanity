@@ -844,7 +844,7 @@ function addDisableEnableButton() {
   
     function validateNextButton() {
       var isNameEntered = $('#nameInput').val().trim() !== '';
-      var isNumericName = /^[a-zA-Z]*$/g.test($('#nameInput').val());
+      var isNumericName = /^[s\S]*$/g.test($('#nameInput').val());
       var isRoomCodeEntered = !roomCodeButton || ($('#roomCodeInput').val().trim().length === 4);
       $('#joinOrCreateGame').prop('disabled', !isNameEntered || !isRoomCodeEntered || !isNumericName);
     }
