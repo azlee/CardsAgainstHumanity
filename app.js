@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 app.use(express.static('./public'));
 var http = require('http').Server(app);
-var port = process.env.PORT || 3000;
+var port = 61001;
 
 var io = require('socket.io')(http);
 const fs = require('fs');
@@ -138,6 +138,10 @@ function getCardHand(numCards, gameRoom) {
     }
     return cards;
 }
+
+ function readFile(path) {
+	 return fs.readFileSync(__dirname + "/" + path);
+ }
 
  /**
  * Initialize game state
@@ -651,5 +655,6 @@ app.get('/', function(req, res) {
 });
 
 http.listen(port, function() {
+    console.log(__dirname);
     console.log('listening on *: ' + port);
 });
