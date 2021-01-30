@@ -304,6 +304,10 @@ h1 {
     margin: .75rem .75rem;
 }
 
+.modal-content select {
+    font-size: 1.25rem;
+}
+
 .modal-content button {
     font-weight: bold;
     letter-spacing: .05rem;

@@ -146,7 +146,7 @@ function getCardHand(numCards, gameRoom) {
  /**
  * Initialize game state
  * @param {str} gameId
- * @param {str} version - PG vs PG-13
+ * @param {str} version - PG vs M
  */
  function initializeGameState(gameId, version) {
     var GameState = {
@@ -194,7 +194,7 @@ function initializePlayer(id, name, gameRoom) {
 /**
  * Create a game room with the game room id
  * @param {str} gameRoomId 
- * @param {str} version - PG or PG-13
+ * @param {str} version - PG or M
  */
 function createGameRoom(gameRoomId, version) {
     var gameRoom = {
@@ -534,7 +534,7 @@ function applyMove(gameRoom, move, answer, playerId) {
 /**
  * Initialize a new game with one player that has the socket id
  * @param {str} name first player joining new game
- * @param {str} version PG vs PG-13
+ * @param {str} version PG vs M
  * @param {str} socketId the socketId of first player connection
  */
 function initNewGame(name, version, socketId) {

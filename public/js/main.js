@@ -164,7 +164,12 @@ const NotificationType = {
 
 const GameVersion = {
     PG:"PG",
-    PG_13: "PG-13",
+    M: "M",
+}
+
+const GameVersionExplanation = {
+    PG: "Family & work safe!",
+    M: "Not for the faint of heart"
 }
 
 /****************************************************************************
@@ -228,7 +233,7 @@ var socket = io();
 /**
  * Create a new game with first player with name
  * @param {str} name - name of first player
- * @param {GameVersion} version - rating of game - PG vs PG-13
+ * @param {GameVersion} version - rating of game - PG vs M
  */
 function createGame(name, version) {
     socket.emit('createGame', { name: name.trim(), version: version });
@@ -779,7 +784,7 @@ function createPlayForm(newGame) {
         var option = document.createElement('option');
         console.log(GameVersion[key]);
         option.value = GameVersion[key];
-        option.innerHTML = GameVersion[key];
+        option.innerHTML = GameVersion[key] + " - " + GameVersionExplanation[key];
         cleanSelect.appendChild(option);
     }
     formDiv.appendChild(img);
