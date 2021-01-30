@@ -151,7 +151,7 @@ function getCardHand(numCards, gameRoom) {
  function initializeGameState(gameId, version) {
     var GameState = {
         // all unused answers
-        answers: shuffle(fs.readFileSync(version === "PG" ? 'public/data/clean-answers.txt' : 'public/data/answers.txt').toString().split("\n")),
+        answers: shuffle(readFile(version === "PG" ? 'public/data/clean-answers.txt' : 'public/data/answers.txt').toString().split("\n")),
         // answer cards in play (in center)
         answerCards: [],
         discardAnswers: [],
@@ -162,7 +162,7 @@ function getCardHand(numCards, gameRoom) {
         // total number of players
         numCardsPerPlayer: NUMBER_CARDS_PER_PLAYER,
         players: new Map(), // pseudo map of Players
-        questions: shuffle(fs.readFileSync(version === "PG" ? 'public/data/clean-questions.txt' : 'public/data/questions.txt').toString().split("\n")),
+        questions: shuffle(readFile(version === "PG" ? 'public/data/clean-questions.txt' : 'public/data/questions.txt').toString().split("\n")),
         roundNum: 1,
         winnerCard: null,
     };
